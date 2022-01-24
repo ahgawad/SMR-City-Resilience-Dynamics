@@ -1,0 +1,2096 @@
+<!doctype html>
+<html lang="en">
+    
+<head>
+
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css" type="text/css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+		<!--link rel="stylesheet" href="https://forio.com/tools/contour/0.9.114/contour.min.css" type="text/css"-->
+		<link rel="stylesheet" href="css/contour.css" type="text/css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <script src="https://forio.com/tools/contour/0.9.114/contour.min.js" type="text/javascript"></script>
+		<!--script src="http://forio.com/tools/contour/contour.min.js"></script-->
+		
+        <!--script src="https://forio.com/tools/js-libs/1.1.2/epicenter.min.js" type="text/javascript"></script>
+        <script src="https://forio.com/tools/js-libs/flow/0.8.2/flow.min.js" type="text/javascript"></script-->
+
+		<!--link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		
+		<link href="css/bootstrap-dialog.css" rel="stylesheet" type="text/css" />
+		<script src="elements/bootstrap-dialog.js"></script-->
+		
+		<!--script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/css/bootstrap-dialog.min.css" type="text/css"-->
+		
+        <!--begin including custom css and js scripts-->
+        <!--modified css and js files, please take them from here to your ILE-->
+        <link rel="stylesheet" href="css/bootstrap-colorpicker.min.css" type="text/css">
+        <link rel="stylesheet" href="css/forio-epicenter.min.css" type="text/css">
+        <link rel="stylesheet" href="css/range.min.css" type="text/css">
+		<!--link rel="stylesheet" href="css/animate.css" type="text/css"-->
+		
+		<!--colours scheme of the SMR-->
+        <link rel="stylesheet" href="css/elements.css" type="text/css">
+
+		<!--this is our javascript, please take it from here to your ILE!-->
+		<script src="elements/bootstrap-colorpicker.min.js" type="text/javascript"></script>
+        <script src="elements/power-gauge.js" type="text/javascript"></script>
+		<script src="elements/elements.js" type="text/javascript"></script>
+        <script src="elements/contour-chart.js" type="text/javascript"></script>
+		<script src="elements/single-scenario-chart.js" type="text/javascript"></script>
+		<script src="elements/single-scenario-table.js" type="text/javascript"></script>
+        <script src="elements/contour-pie.js" type="text/javascript"></script>
+        <!--end including custom css and js scripts-->
+
+		<!-- Begin InsightMaker XML Model-->
+		<script type="text/javascript" src="model.js"></script>
+		<!-- End InsightMaker XML Model-->
+
+		<script type="text/javascript" src="policies.js"></script>
+		
+		<!-- Begin InsightMaker Files-->
+
+		<script type="text/javascript" src="js/Localization.js"></script>
+		<script type="text/javascript" src="js/Variables.js"></script>
+		<script type="text/javascript" src="js/Utilities.js"></script>	
+		<script type="text/javascript" src="js/API/API.js"></script>
+		<script type="text/javascript" src="js/mxShim.js"></script>
+		<script type="text/javascript" src="js/Sanitize.js"></script>
+		<script type="text/javascript" src="js/Updater.js"></script>
+		<script type="text/javascript" src="tests/ModelTests.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/OO.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/calc/unitsStructure.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/calc/units.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/SimpleCalc.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/calc/antlr3-all-min.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/calc/output/FormulaLexer.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/calc/output/FormulaParser.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/calc/rand.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/calc/random.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/calc/formula.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/calc/functions.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/Functions.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/Classes.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/Primitives.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/TaskScheduler.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/Simulator.js"></script>
+		<script type="text/javascript" src="js/SimulationEngine/Modeler.js"></script>
+		<script type="text/javascript" src="resources/RedBlackNode.js"></script> 
+		<script type="text/javascript" src="resources/RedBlackTree.js"></script> 
+		<script type="text/javascript" src="resources/graph.js"></script>
+
+
+		<!-- End InsightMaker Files-->
+		<script type="text/javascript">
+			var origFindName = findName;
+			findName = function(str) {
+				 //iniRes.value(_.filter(findName('Available_Budget'), function(itm) { return getType(itm) != "Ghost"; })[0]);
+				 y = origFindName(str);
+				 //z = $(y).toArray().length;
+				 if (Array.isArray(y)) //(z > 1)
+					return _.filter(y, function(itm) { return getType(itm) != "Ghost"; })[0];
+					//return _.last(y);
+					//return y[y.length-1];
+				else
+					return y;
+			}
+
+			//https://stackoverflow.com/questions/7364150/find-object-by-id-in-an-array-of-javascript-objects
+			// array = [{key:value},{key:value}]
+			function objectFindByKey(array, key, value) {
+				for (var i = 0; i < array.length; i++) {
+					if (array[i][key] === value) {
+						return array[i];
+					}
+				}
+				return null;
+			}
+
+			function findElementByText(text){
+				var elm=$("div:contains("+text+")")
+					.filter(function(){ return $(this).children().length === 0;});
+				return elm;
+			}
+			
+			function highlightON(me){
+				findElementByText($(me).text()).addClass("highlighter");
+			}
+			function highlightOFF(me){
+				findElementByText($(me).text()).removeClass("highlighter");
+			}
+			
+			function findTotal( me ) {
+				if ( me ) $( me.nextElementSibling ).text( d3.format(".3s" )( ( ( me.value == "" ) || isNaN( me.value ) ) ? 0 : me.value ) );
+				var tot = 0;
+				$("input[id$='Goal']").each(function (i, el) {
+					if(parseInt(el.value))
+						tot += parseInt(el.value);
+				});
+
+				var Budget = $("#text_Available_Budget_Initial").val() - tot;
+				$('#div_budget_left').find("span").text( d3.format('.3s')( Budget ) );
+				if ( Budget < 0 ) {
+					$('#div_budget_left').addClass("budgethighlighter");
+					$('#advanceSimulationButton').prop('disabled', true);
+				} else {
+					$('#div_budget_left').removeClass("budgethighlighter");
+					$('#advanceSimulationButton').prop('disabled', false);
+				}
+			}
+			
+			function findChartWidth(script) {
+				////////////////////////////////////////
+				//Browser inner window A cross-browser solution (using clientWidth and clientHeight for IE8 and earlier): https://www.w3schools.com/jsref/prop_win_innerheight.asp
+				var browserInWinWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+				var browserInWinHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+				//http://stackoverflow.com/questions/14441456/how-to-detect-which-device-view-youre-on-using-twitter-bootstrap-api
+				function findBootstrapEnvironment() {
+					var envs = ['xs', 'sm', 'md', 'lg'];
+					var $el = $('<div>');
+					$el.appendTo($('body'));
+
+					for (var i = envs.length - 1; i >= 0; i--) {
+						var env = envs[i];
+
+						$el.addClass('hidden-'+env);
+						if ($el.is(':hidden')) {
+							$el.remove();
+							return env;
+						}
+					}
+				}
+
+				var str = $(script).parent().attr('class');
+				//str='col-md-6';
+				var n = str.search('col-');
+				var elmEnv = str.substring(n+4, n+6); //md
+				var elmColNum= str.substring(n+7, n+8); //6
+				var envs = ['xs', 'sm', 'md', 'lg'];
+				if(envs.indexOf(elmEnv) <= envs.indexOf(findBootstrapEnvironment())) {
+					chartWidth = (browserInWinWidth*elmColNum/12)*0.90;
+				} else {
+					chartWidth = browserInWinWidth*0.90;
+				}
+				return chartWidth+"px";
+				///////////////////////////////////////////
+			
+			}
+			
+			function initialiseSTARTStage() {
+				$("input[id$='Level_Initial']").filter(function() {
+					return this.id.match(/\D\d[SMART]\d/);
+				}).each(function (i, el) {
+					var modelIniVarVal = 0;
+					el.value = modelIniVarVal;
+					$(el.nextElementSibling).text(modelIniVarVal+'%')
+				});
+			}
+			
+			function initialiseMODERATEStage() {
+				$("input[id$='Level_Initial']").filter(function() {
+					return this.id.match(/\D\d[SMART]\d/);
+				}).each(function (i, el) {
+					var modelIniVarVal = 0;
+					el.value = modelIniVarVal;
+					$(el.nextElementSibling).text(modelIniVarVal+'%')
+				});
+				//range_L1S2_Implementation_Level_Initial
+				$("input[id$='Level_Initial']").filter(function() {
+					return this.id.match(/\D\dS\d/);
+				}).each(function (i, el) {
+					var modelIniVarVal = 100;
+					el.value = modelIniVarVal;
+					$(el.nextElementSibling).text(modelIniVarVal+'%')
+				});
+			}
+
+			
+			function initialiseADVANCEDStage() {
+				$("input[id$='Level_Initial']").filter(function() {
+					return this.id.match(/\D\d[SMART]\d/);
+				}).each(function (i, el) {
+					var modelIniVarVal = 0;
+					el.value = modelIniVarVal;
+					$(el.nextElementSibling).text(modelIniVarVal+'%')
+				});
+					$("input[id$='Level_Initial']").filter(function() {
+						return this.id.match(/\D\d[SM]\d/);
+					}).each(function (i, el) {
+						var modelIniVarVal = 100;
+						el.value = modelIniVarVal;
+						$(el.nextElementSibling).text(modelIniVarVal+'%')
+					});
+			}
+
+			
+			function initialiseROBUSTStage() {
+				$("input[id$='Level_Initial']").filter(function() {
+					return this.id.match(/\D\d[SMART]\d/);
+				}).each(function (i, el) {
+					var modelIniVarVal = 0;
+					el.value = modelIniVarVal;
+					$(el.nextElementSibling).text(modelIniVarVal+'%')
+				});
+				
+				$("input[id$='Level_Initial']").filter(function() {
+					return this.id.match(/\D\d[SMA]\d/);
+				}).each(function (i, el) {
+					var modelIniVarVal = 100;
+					el.value = modelIniVarVal;
+					$(el.nextElementSibling).text(modelIniVarVal+'%')
+				});
+
+			}
+
+			
+
+			function initialiseVERTEBRAEStage() {
+				$("input[id$='Level_Initial']").filter(function() {
+					return this.id.match(/\D\d[SMART]\d/);
+				}).each(function (i, el) {
+					var modelIniVarVal = 0;
+					el.value = modelIniVarVal;
+					$(el.nextElementSibling).text(modelIniVarVal+'%')
+				});
+
+				$("input[id$='Level_Initial']").filter(function() {
+					return this.id.match(/\D\d[SMAR]\d/);
+				}).each(function (i, el) {
+					var modelIniVarVal = 100;
+					el.value = modelIniVarVal;
+					$(el.nextElementSibling).text(modelIniVarVal+'%')
+				});
+
+			}
+			function updateCurrency(currencyID) {
+				selectedCurrencyID = currencyID;
+				$(".currencyicon").each(function (i, el) {
+					var $this = $(el);
+					$this.toggleClass().toggleClass("currencyicon").toggleClass(currencyClassVector[currencyID]);
+				});
+				$(".currency").each(function (i, el) {
+					var $this = $(el);
+					$this.text(currencyVector[currencyID]);
+				});
+				//d3.select("#chart_Used_Budget").selectAll("svg text").filter('.y.axis-title').text(currencyVector[currencyID]);
+				//renderContours();
+				for (var key in singleScenarioChartsArray) {
+					if (_.contains(currencyVector, singleScenarioChartsArray[key].contourInstance.options.yAxis.title)) singleScenarioChartsArray[key].contourInstance.options.yAxis.title=currencyVector[currencyID];
+				}
+				for (var key in contoursArray) {
+					if (_.contains(currencyVector, contoursArray[key].contourInstance.options.yAxis.title)) contoursArray[key].contourInstance.options.yAxis.title=currencyVector[currencyID];
+				}
+			}
+
+
+
+		</script>
+        <link rel="shortcut icon" href="favicon.ico" />		
+        <title>SMR - City Resilience Dynamics</title>
+    </head>
+    <body data-f-model="smr.vmf" data-f-on-init="startGame|stepTo(0)" class="inside">
+		<!-- begin all GUI tabs -->
+		<div class="tab-content" style="width: 100%;">
+			<!-- begin title header all tabs -->
+			<div class="navbar navbar-default navbar-fixed-top">
+				<div class="full_width_container">
+					<div id="logo_navigation_box" class="navbar-brand centered_with_container clearfix">
+						<div id="smr_logo_box">
+							<a href="index.html">
+								<img src="img/logo_smr_180x131.png" alt="Logo - SMR - City Resilience Dynamics" title="Logo - SMR - City Resilience Dynamics" height="70" />
+								<!--img src="http://smr-project.eu/fileadmin/templates/smr/images/logo_smr_180x131.png" alt="Logo - SMR - City Resilience Dynamics" title="Logo - SMR - City Resilience Dynamics" /-->
+							</a>
+						</div>
+					</div>
+					<div>
+						<h2 class="navbar-text">SMR - City Resilience Dynamics<span id="cityName_div"> - Example City</span></h2>
+					</div>
+					<button type="button" style="" class="btn navbar-btn pull-right" onclick="window.open('help/Quick%20Start%20Guide.pdf')" data-toggle="tooltip" data-html="true" data-original-title="Press here for help"><span style="" class="glyphicon glyphicon-question-sign"></span> Help</button><span class="btn-shadow"></span>
+				</div>
+			</div>
+			<!-- end title header all tabs -->
+
+			<!-- begin initilaisation tab -->
+			<div class="content-wrapper container-fluid tab-pane fade in active" id="maintabs-0">
+				<div class="container-fluid">
+					<br><br><br>
+					<div class="showInSmallScreens"><br><br></div>
+					<!--div class="page-header">
+					<h3>City Resilience Dynamics Tool
+					</h3></div-->
+					<div class="">
+						<p>The City Resilience Dynamics tool is a training tool that helps cities explore different strategies regarding the implementation of resilience policies, simulate the results of each strategy and learn about the resilience building process that the cities need to follow to improve their resilience level in the most efficient way. The City Resilience Dynamics tool encapsulates the most important aspects of the Resilience Maturity Model, and helps to better understand how it is functioning. The purpose of the Resilience Maturity Model is to provide a common understanding of the resilience building process. All city stakeholders are potential users, but the key stakeholders are those in a position to make strategic decisions. The City Resilience Dynamics tool helps cities to identify the most efficient way of implementing the policies in sequence that is aligned with the Resilience Maturity Model.</p>
+						<p>Based on the Resilience Maturity Model, the tool presents four maturity stages. For each stage, policies have been distributed. The tool provides indicators that need to be measured to show the implementation level of these policies as well.</p>
+						<p>Using the tool, cities and more specifically municipal employees and elected officials that are engaged in activities connected to strategic planning and management of the city, are asked to consider city’s current status of resilience, and then check through the tool which are those policies that need to be implemented in order for the city to evolve and move to the next maturity stage. The tool contains also indicators to measure these policies.</p>
+						<p><button type="button" style="" class="btn" onclick="window.open('http://smr-project.eu/')" data-toggle="tooltip" data-html="true" data-original-title="Press here to learn more about Resilience Maturity Model"><span style="" class="glyphicon glyphicon-info-sign"></span> Learn more about RMM</button><span class="btn-shadow"></span></p>
+						<p>In this page, you are defining your initial situation before starting the simulation game. Please indicate your current SMART stage by clicking “STAGE” at the bottom of the page. You can also change the default annual budget by clicking “ANNUAL BUDGET”. By clicking “SETTINGS”, you can further change the model internal parameters (for example time and cost needed to implement certain policy). All initial settings you have made could be saved in a file for later usage by clicking “SAVE SETTINGS”. Saved settings file could be loaded by clicking “LOAD SETTINGS”. Finally, by clicking “START” you can proceed to start the game.</p>
+						<p>N.B. At any time, you can access a quick guide for this tool by clicking the “Help” button available at the top-right corner.</p>
+					</div>
+					<div class="showInSmallScreens"><br><br><br><br></div>
+
+					<!--move to simulation / next button in here-->
+					<div class="showInSmallScreens"><br><br><br></div><br><br><br>
+					<div class="row navbar navbar-default navbar-fixed-bottom">
+						<div class="col-md-2">
+							<button id="initialisationModalButton" type="button" style="" class="btn btn-block" data-toggle="tooltip" data-html="true" data-original-title="Select your current SMART stage"><span style="" class="glyphicon glyphicon-home"></span> STAGE</button><span class="btn-shadow"></span>
+						</div>
+						<div class="col-md-2">
+							<button id="iniBudgetButton" type="button" style="" class="btn btn-block" data-toggle="tooltip" data-html="true" data-original-title="Change the default annual budget">DEFAULT BUDGET <span style="border-style: groove;padding-top: 2px;padding-left: 1px;padding-right: 3px;padding-bottom: 2px;" class="currencyicon glyphicon-eur"></span></button><span class="btn-shadow"></span>
+						</div>
+						<div class="col-md-2">
+							<button id="iniSettingsButton" type="button" style="" class="btn btn-block" data-toggle="tooltip" data-html="true" data-original-title="Change the default settings"><span style="" class="glyphicon glyphicon-cog"></span> SETTINGS</button><span class="btn-shadow"></span>
+						</div>
+						<div class="col-md-2">
+							<button id="loadIniSettingsButton" type="button" style="" class="btn btn-block" data-toggle="tooltip" data-html="true" data-original-title="Load the default settings from file"><span style="" class="glyphicon glyphicon-open-file"></span> LOAD SETTINGS</button><span class="btn-shadow"></span>
+
+<!--div style="display: block; width: 100px; height: 20px; overflow: hidden;">
+	<button style="width: 110px; height: 30px; position: relative; top: -5px; left: -5px;">
+		<a href="javascript: void(0)">Upload File</a>
+	</button>
+	<input type="file" id="upload_input" name="upload" style="font-size: 50px; width: 120px; opacity: 0; filter:alpha(opacity=0);  position: relative; top: -40px;; left: -20px" />
+</div-->
+							
+						</div>
+						<div class="col-md-2">
+							<button id="saveIniSettingsButton" type="button" style="" class="btn btn-block" data-toggle="tooltip" data-html="true" data-original-title="Save the default settings to file"><span style="" class="glyphicon glyphicon-save-file"></span> SAVE SETTINGS</button><span class="btn-shadow"></span>
+						</div>
+						<div class="col-md-2">
+							<span data-toggle="tooltip" data-html="true" data-original-title="Start the simulation"><button id="goToGamePageButton" onclick="beginGame()" class="btn btn-block" data-toggle="tab" href="#maintabs-1"><span class="glyphicon glyphicon-flag"></span> START</button><span class="btn-shadow"></span></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end initilaisation tab -->
+			
+			<!-- begin simulation control and results tab -->
+			<div class="content-wrapper container-fluid tab-pane fade" id="maintabs-1">
+				<div class="tab-content" style="width: 100%;">
+					<br><br><br>
+
+					<!-- begin tab 0: Control tab -->
+					<div class="content-wrapper container-fluid tab-pane fade in active" id="tabs-0">
+						<div class="showInSmallScreens"><br><br></div>
+						<div class="page-header">
+							<h3>Please indicate the amount you are planning to spend to implement the following policies for this year:</h3>
+						</div>
+						<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+							<div class="col-md-2 leadership" style="" data-toggle="tooltip" data-html="true" data-original-title="Leadership and Governance affect the decision-making process of the CITY. Commitment by the leaders to a resilience culture, values and vision is essential for promoting effective strategies, inclusive decision-making and the engagement of relevant city stakeholders. All government levels should develop an organizational culture of enthusiasm for challenge, agility, flexibility, adaptive capacity and innovation.">Leadership and Governance</div>
+							<div class="col-md-10">
+								<script type="text/javascript">
+									(function() {
+										var scripts= document.getElementsByTagName('script');
+										var script= scripts[scripts.length-1];
+										var div= document.createElement('div');
+										for (var i = 0, tot = leadershipPolicies.length; i < tot; i++) { 
+											div.innerHTML += "<div class='trg"+leadershipPolicies[i]["Dimension"]+" row'><div class='col-md-2 "+leadershipPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='"+leadershipPolicies[i]["stageDescription"]+"'>"+leadershipPolicies[i]["stage"]+"</div><div id='"+leadershipPolicies[i]["policyCode"]+"_div' class='col-md-7 "+leadershipPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='"+leadershipPolicies[i]["policyDescription"]+"'>"+leadershipPolicies[i]["policyText"]+"</div><div class='col-md-3' style=''><div class=''><input id='range_"+leadershipPolicies[i]["policyCode"]+"_Devoted_Budget_Goal' style='width:70%;display:inline-block;' class='form-control allownumericwithoutdecimal' oninput='findTotal( this )' onchange='findTotal( this )' onblur='this.value= ( ( this.value == \"\" ) || isNaN( this.value ) ) ? 0 : parseInt(this.value)' data-f-bind='"+leadershipPolicies[i]["policyCode"]+"_Devoted_Budget_Goal' min='0' max='100' step='1' type='text'><span class='range-value currencyicon glyphicon-eur'></span></div></div></div>"
+										}
+										script.parentNode.insertBefore(div, script);
+									})();
+								</script>
+							</div>
+						</div>
+						<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+							<div class="col-md-2 preparedness" style="" data-toggle="tooltip" data-html="true" data-original-title="Preparedness refers to anticipation of future needs and adapting the CITY functions accordingly. Preparedness can be developed at all levels of society, from individuals and communities to leaders and governments. It also includes being prepared for the unexpected, by increasing flexibility and the CITY’s adaptive capacity and skills.">Preparedness</div>
+							<div class="col-md-10">
+								<script type="text/javascript">
+									(function() {
+										var scripts= document.getElementsByTagName('script');
+										var script= scripts[scripts.length-1];
+										var div= document.createElement('div');
+										for (var i = 0, tot = preparednessPolicies.length; i < tot; i++) { 
+											div.innerHTML += "<div class='trg"+preparednessPolicies[i]["Dimension"]+" row'><div class='col-md-2 "+preparednessPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='"+preparednessPolicies[i]["stageDescription"]+"'>"+preparednessPolicies[i]["stage"]+"</div><div id='"+preparednessPolicies[i]["policyCode"]+"_div' class='col-md-7 "+preparednessPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='"+preparednessPolicies[i]["policyDescription"]+"'>"+preparednessPolicies[i]["policyText"]+"</div><div class='col-md-3' style=''><div class=''><input id='range_"+preparednessPolicies[i]["policyCode"]+"_Devoted_Budget_Goal' style='width:70%;display:inline-block;' class='form-control allownumericwithoutdecimal' oninput='findTotal( this )' onchange='findTotal( this )' onblur='this.value= ( ( this.value == \"\" ) || isNaN( this.value ) ) ? 0 : parseInt(this.value)' data-f-bind='"+preparednessPolicies[i]["policyCode"]+"_Devoted_Budget_Goal' min='0' max='100' step='1' type='text'><span class='range-value currencyicon glyphicon-eur'></span></div></div></div>"
+										}
+										script.parentNode.insertBefore(div, script);
+									})();
+								</script>
+							</div>
+						</div>
+						<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+							<div class="col-md-2 infrastructure" data-toggle="tooltip" data-html="true" data-original-title="The CITY infrastructure requires robustness to resist and absorb hazards through the preservation and restoration of its essential functions. This requires redundancy, risk management and continues work on decreasing vulnerabilities apart from the deployment of resources. The resources include all assets, people, skills, information, technology (including plant and equipment), premises, and supplies and information (whether electronic or not) that an organization needs to have available to use, when needed, to operate and meet its objectives.">Infrastructure and Resources</div>
+							<div class="col-md-10">
+								<script type="text/javascript">
+									(function() {
+										var scripts= document.getElementsByTagName('script');
+										var script= scripts[scripts.length-1];
+										var div= document.createElement('div');
+										for (var i = 0, tot = infrastructurePolicies.length; i < tot; i++) { 
+											div.innerHTML += "<div class='trg"+infrastructurePolicies[i]["Dimension"]+" row'><div class='col-md-2 "+infrastructurePolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='"+infrastructurePolicies[i]["stageDescription"]+"'>"+infrastructurePolicies[i]["stage"]+"</div><div id='"+infrastructurePolicies[i]["policyCode"]+"_div' class='col-md-7 "+infrastructurePolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='"+infrastructurePolicies[i]["policyDescription"]+"'>"+infrastructurePolicies[i]["policyText"]+"</div><div class='col-md-3' style=''><div class=''><input id='range_"+infrastructurePolicies[i]["policyCode"]+"_Devoted_Budget_Goal' style='width:70%;display:inline-block;' class='form-control allownumericwithoutdecimal' oninput='findTotal( this )' onchange='findTotal( this )' onblur='this.value= ( ( this.value == \"\" ) || isNaN( this.value ) ) ? 0 : parseInt(this.value)' data-f-bind='"+infrastructurePolicies[i]["policyCode"]+"_Devoted_Budget_Goal' min='0' max='100' step='1' type='text'><span class='range-value currencyicon glyphicon-eur'></span></div></div></div>"
+										}
+										script.parentNode.insertBefore(div, script);
+									})();
+								</script>
+							</div>
+						</div>
+						<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+							<div class="col-md-2 cooperation" data-toggle="tooltip" data-html="true" data-original-title="Cooperation refers to working or acting together for a common purpose or benefit. Cooperation is developed within the city and at a cross-regional level. The necessary stakeholders across city and regional sectors including European cities will be considered. Cooperation is also developed at community level involving different stakeholders such as volunteer groups and citizens that show the ability to self-organise.">Cooperation</div>
+							<div class="col-md-10">
+								<script type="text/javascript">
+									(function() {
+										var scripts= document.getElementsByTagName('script');
+										var script= scripts[scripts.length-1];
+										var div= document.createElement('div');
+										for (var i = 0, tot = cooperationPolicies.length; i < tot; i++) { 
+											div.innerHTML += "<div class='trg"+cooperationPolicies[i]["Dimension"]+" row'><div class='col-md-2 "+cooperationPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='"+cooperationPolicies[i]["stageDescription"]+"'>"+cooperationPolicies[i]["stage"]+"</div><div id='"+cooperationPolicies[i]["policyCode"]+"_div' class='col-md-7 "+cooperationPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='"+cooperationPolicies[i]["policyDescription"]+"'>"+cooperationPolicies[i]["policyText"]+"</div><div class='col-md-3' style=''><div class=''><input id='range_"+cooperationPolicies[i]["policyCode"]+"_Devoted_Budget_Goal' style='width:70%;display:inline-block;' class='form-control allownumericwithoutdecimal' oninput='findTotal( this )' onchange='findTotal( this )' onblur='this.value= ( ( this.value == \"\" ) || isNaN( this.value ) ) ? 0 : parseInt(this.value)' data-f-bind='"+cooperationPolicies[i]["policyCode"]+"_Devoted_Budget_Goal' min='0' max='100' step='1' type='text'><span class='range-value currencyicon glyphicon-eur'></span></div></div></div>"
+										}
+										script.parentNode.insertBefore(div, script);
+									})();
+								</script>
+							</div>
+						</div>
+					</div>
+					<!-- end tab 0: Control tab -->
+
+					<!-- begin tab 1: Results tab -->
+					<div class="content-wrapper container-fluid tab-pane fade" id="tabs-1">
+						<div class="showInSmallScreens"><br><br></div>
+						<div class="page-header">
+							<h3>Here are your policies’ implementation levels, and values of indicators:</h3>
+						</div>
+						<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+							<div class="col-xs-6" style="">
+								<div class="btn-group" data-toggle="btns">
+									<a class="btn btn-default active" href="#pies-0" onclick="$('div[id^=\'charts-\']').removeClass('active in');$('#charts-0').addClass('in active');" data-toggle="tab"><span data-toggle="tooltip" data-html="true" data-original-title="Results for Leadership and Governance Dimension">L</span></a>
+									<a class="btn btn-default" href="#pies-1" onclick="$('div[id^=\'charts-\']').removeClass('active in');$('#charts-1').addClass('in active');" data-toggle="tab"><span data-toggle="tooltip" data-html="true" data-original-title="Results for Preparedness Dimension">P</span></a>
+									<a class="btn btn-default" href="#pies-2" onclick="$('div[id^=\'charts-\']').removeClass('active in');$('#charts-2').addClass('in active');" data-toggle="tab"><span data-toggle="tooltip" data-html="true" data-original-title="Results for Infrastructure and Resources Dimension">I</span></a>
+									<a class="btn btn-default" href="#pies-3" onclick="$('div[id^=\'charts-\']').removeClass('active in');$('#charts-3').addClass('in active');" data-toggle="tab"><span data-toggle="tooltip" data-html="true" data-original-title="Results for Cooperation Dimension">C</span></a>
+								</div>
+							</div>
+							<div class="col-xs-6" style="">
+								<div class="row">
+								<!--Begin Scenario Selector button-->
+								<div class="col-md-6" style="">
+									<button id="scenariosSelectorModalShow" style="" class="btn btn-block" data-toggle="tooltip" data-html="true" data-original-title="Select the scenarios you want to represent in the graph"><span class="glyphicon glyphicon-list-alt"></span> Scenario Selector</button><span class="btn-shadow"></span>
+								</div>
+								<div class="col-md-6" style="">
+									<!--button id="messagesButton" style="" class="btn btn-block" data-toggle="tooltip" data-html="true" data-original-title="Show all past messages since the begining of this scenario">Show All Messages</button><span class="btn-shadow"></span-->
+									<span data-toggle="tooltip" data-html="true" data-original-title="Show more details for a selected scenario"><button id="scenarioDetailsButton" class="btn btn-block" data-toggle="tab" href="#maintabs-2"><span class="glyphicon glyphicon-info-sign"></span> Current Scenario Details</button><span class="btn-shadow"></span></span>
+								</div>
+								
+								<!--End Scenario Selector button-->
+								</div>
+							</div>
+						</div>
+						<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+							<div class="tab-content" style="width: 100%;">
+								<div class="tab-pane fade in active" id="pies-0">
+								<div class="row">
+								<div class="col-md-6" style="">
+								
+								
+								
+								<div class="y-scrollable" style="">
+									<div class="row">
+										<div class="col-md-8 leadership" style="" data-toggle="tooltip" data-html="true" data-original-title="Results for Leadership and Governance Dimension.">Results for Leadership and Governance Dimension</div>
+										<div class="col-md-3 leadershippie">
+										<div class="leadership row" style="" data-toggle="tooltip" data-html="true" data-original-title="What is still available from the total budget devoted to this dimension." data-f-bind="LEADERSHIP_Available_Budget"><b>Available: <span class="currencyicon glyphicon-eur"></span></b></div>
+										<div class="leadership row" style="" data-toggle="tooltip" data-html="true" data-original-title="Total budget spent on this dimension." data-f-bind="LEADERSHIP_Used_Budget"><b>Spent: <span class="currencyicon glyphicon-eur"></span></b></div></div>
+										<!--div class="col-md-1 leadership"></div-->
+									</div>
+									<div>
+										<script type="text/javascript">
+											(function() {
+												var scripts= document.getElementsByTagName('script');
+												var script= scripts[scripts.length-1];
+												var div= document.createElement('div');
+												for (var i = 0, tot = leadershipPolicies.length; i < tot; i++) { 
+													div.innerHTML += "<div class='rsl"+leadershipPolicies[i]["Dimension"]+" row'><div class='col-md-8 "+leadershipPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='"+leadershipPolicies[i]["policyDescription"]+"'>"+leadershipPolicies[i]["policyText"]+"</div><div class='col-md-3 "+leadershipPolicies[i]["dimension"]+"pie' style='padding-left: 0px; padding-right: 0px; text-align: center;'><div class='"+leadershipPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='What is still available from the total budget devoted to this policy.' data-f-bind='"+leadershipPolicies[i]["policyCode"]+"_Available_Budget'><b>Available: <span class='currencyicon glyphicon-eur'></b></span></div><div class='"+leadershipPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='Total budget spent on this policy.' data-f-bind='"+leadershipPolicies[i]["policyCode"]+"_Used_Budget'><b>Spent: <span class='currencyicon glyphicon-eur'></b></span></div><div style='' style='' data-toggle='tooltip' data-html='true' data-original-title='Real policy implementation.'>Actual</div><div id='pie_"+leadershipPolicies[i]["policyCode"]+"_Implementation_Level'></div><div style='' style='' data-toggle='tooltip' data-html='true' data-original-title='Policy implementation is effective only when all preceding policies have been implemented effectively.'>Effective</div><div id='pie_"+leadershipPolicies[i]["policyCode"]+"_Effective_Implementation_Level'></div></div></div>";
+												}
+												script.parentNode.insertBefore(div, script);
+											})();
+											for (var i = 0, tot = leadershipPolicies.length; i < tot; i++) { 
+												
+												addContourPie("pie_"+leadershipPolicies[i]["policyCode"]+"_Implementation_Level", leadershipPolicies[i]["policyCode"]+"_Implementation_Level", 0 , leadershipPolicies[i]["policyCode"]+"_Implementation_Level", leadershipPolicies[i]["policyCode"]+"_Implementation_Level", "150%");
+												
+												addContourPie("pie_"+leadershipPolicies[i]["policyCode"]+"_Effective_Implementation_Level", leadershipPolicies[i]["policyCode"]+"_Effective_Implementation_Level", 0 , leadershipPolicies[i]["policyCode"]+"_Effective_Implementation_Level", leadershipPolicies[i]["policyCode"]+"_Effective_Implementation_Level", "150%");
+												
+											}
+										</script>
+									</div>	
+								</div>
+
+								</div>
+								<div class="col-md-6" style="">
+									<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+									<script type="text/javascript">
+										var scripts = document.getElementsByTagName('script');
+										var script = scripts[scripts.length-1];
+										var chartWidth = findChartWidth(script);
+									
+										//addContourChart(chartID, source, categories, chartTitle, yAxisTitle, yLabelFormat, xLabelFormat, yTicks, xTicks, legend, markers, columnChart, histSource, histCat, chartTitleTooltip, chartWidth, stackedColumns);
+										addContourChart("chart_LEADERSHIP_Indicator", "LEADERSHIP_Indicator", "Time", "Leadership and Governance Indicator", "Dimensionless", ".3s", undefined, undefined, undefined, undefined, true, false, undefined, undefined, "Leadership and Governance Indicator", chartWidth, undefined, "Years");
+									</script>
+									<!--end adding custom script-->
+								</div>
+								</div>
+								</div>
+
+								<div class="tab-pane fade" id="pies-1">
+								<div class="row">
+								<div class="col-md-6" style="">
+								<div class="y-scrollable" style="">
+									<div class="row">
+										<div class="col-md-8 preparedness" style="" data-toggle="tooltip" data-html="true" data-original-title="Results for Preparedness Dimension">Results for Preparedness Dimension</div>
+										<div class="col-md-3 preparednesspie">
+										<div class="preparedness row" style="" data-toggle="tooltip" data-html="true" data-original-title="What is still available from the total budget devoted to this dimension." data-f-bind="PREPAREDNESS_Available_Budget"><b>Available: <span class="currencyicon glyphicon-eur"></span></b></div>
+										<div class="preparedness row" style="" data-toggle="tooltip" data-html="true" data-original-title="Total budget spent on this dimension." data-f-bind="PREPAREDNESS_Used_Budget"><b>Spent: <span class="currencyicon glyphicon-eur"></span></b></div></div>
+
+									</div>
+									<div>
+										<script type="text/javascript">
+											(function() {
+												var scripts= document.getElementsByTagName('script');
+												var script= scripts[scripts.length-1];
+												var div= document.createElement('div');
+												for (var i = 0, tot = preparednessPolicies.length; i < tot; i++) { 
+													div.innerHTML += "<div class='rsl"+preparednessPolicies[i]["Dimension"]+" row'><div class='col-md-8 "+preparednessPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='"+preparednessPolicies[i]["policyDescription"]+"'>"+preparednessPolicies[i]["policyText"]+"</div><div class='col-md-3 "+preparednessPolicies[i]["dimension"]+"pie' style='padding-left: 0px; padding-right: 0px; text-align: center;'><div class='"+preparednessPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='What is still available from the total budget devoted to this policy.' data-f-bind='"+preparednessPolicies[i]["policyCode"]+"_Available_Budget'><b>Available: <span class='currencyicon glyphicon-eur'></b></span></div><div class='"+preparednessPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='Total budget spent on this policy.' data-f-bind='"+preparednessPolicies[i]["policyCode"]+"_Used_Budget'><b>Spent: <span class='currencyicon glyphicon-eur'></b></span></div><div style='' style='' data-toggle='tooltip' data-html='true' data-original-title='Real policy implementation.'>Actual</div><div id='pie_"+preparednessPolicies[i]["policyCode"]+"_Implementation_Level'></div><div style='' style='' data-toggle='tooltip' data-html='true' data-original-title='Policy implementation is effective only when all preceding policies have been implemented effectively.'>Effective</div><div id='pie_"+preparednessPolicies[i]["policyCode"]+"_Effective_Implementation_Level'></div></div></div>";
+												}
+												script.parentNode.insertBefore(div, script);
+
+											})();
+											for (var i = 0, tot = preparednessPolicies.length; i < tot; i++) { 
+												
+												addContourPie("pie_"+preparednessPolicies[i]["policyCode"]+"_Implementation_Level", preparednessPolicies[i]["policyCode"]+"_Implementation_Level", 0 , preparednessPolicies[i]["policyCode"]+"_Implementation_Level", preparednessPolicies[i]["policyCode"]+"_Implementation_Level", "150%");
+												
+												addContourPie("pie_"+preparednessPolicies[i]["policyCode"]+"_Effective_Implementation_Level", preparednessPolicies[i]["policyCode"]+"_Effective_Implementation_Level", 0 , preparednessPolicies[i]["policyCode"]+"_Effective_Implementation_Level", preparednessPolicies[i]["policyCode"]+"_Effective_Implementation_Level", "150%");
+												
+											}
+										</script>
+									</div>
+								</div>
+								</div>
+								<div class="col-md-6" style="">
+									<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+									<script type="text/javascript">
+										var scripts = document.getElementsByTagName('script');
+										var script = scripts[scripts.length-1];
+										var chartWidth = findChartWidth(script);
+										//addContourChart(chartID, source, categories, chartTitle, yAxisTitle, yLabelFormat, xLabelFormat, yTicks, xTicks, legend, markers, columnChart, histSource, histCat, chartTitleTooltip, chartWidth, stackedColumns);
+										addContourChart("chart_PREPAREDNESS_Indicator", "PREPAREDNESS_Indicator", "Time", "Preparedness Indicator", "Dimensionless", ".3s", undefined, undefined, undefined, undefined, true, false, undefined, undefined, "Preparedness Indicator", chartWidth, undefined, "Years");
+									</script>
+									<!--end adding custom script-->
+								</div>
+								</div>
+								</div>
+
+								<div class="tab-pane fade" id="pies-2">
+								<div class="row">
+								<div class="col-md-6" style="">
+								<div class="y-scrollable" style="">
+									<div class="row">
+										<div class="col-md-8 infrastructure" data-toggle="tooltip" data-html="true" data-original-title="Results for Infrastructure and Resources Dimension">Results for Infrastructure and Resources Dimension</div>
+										<div class="col-md-3 infrastructurepie">
+										<div class="infrastructure row" style="" data-toggle="tooltip" data-html="true" data-original-title="What is still available from the total budget devoted to this dimension." data-f-bind="INFRASTRUCTURE_Available_Budget"><b>Available: <span class="currencyicon glyphicon-eur"></span></b></div>
+										<div class="infrastructure row" style="" data-toggle="tooltip" data-html="true" data-original-title="Total budget spent on this dimension." data-f-bind="INFRASTRUCTURE_Used_Budget"><b>Spent: <span class="currencyicon glyphicon-eur"></span></b></div></div>
+									</div>
+									
+									<div>
+										<script type="text/javascript">
+											(function() {
+												var scripts= document.getElementsByTagName('script');
+												var script= scripts[scripts.length-1];
+												var div= document.createElement('div');
+												for (var i = 0, tot = infrastructurePolicies.length; i < tot; i++) { 
+													div.innerHTML += "<div class='rsl"+infrastructurePolicies[i]["Dimension"]+" row'><div class='col-md-8 "+infrastructurePolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='"+infrastructurePolicies[i]["policyDescription"]+"'>"+infrastructurePolicies[i]["policyText"]+"</div><div class='col-md-3 "+infrastructurePolicies[i]["dimension"]+"pie' style='padding-left: 0px; padding-right: 0px; text-align: center;'><div class='"+infrastructurePolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='What is still available from the total budget devoted to this policy.' data-f-bind='"+infrastructurePolicies[i]["policyCode"]+"_Available_Budget'><b>Available: <span class='currencyicon glyphicon-eur'></b></span></div><div class='"+infrastructurePolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='Total budget spent on this policy.' data-f-bind='"+infrastructurePolicies[i]["policyCode"]+"_Used_Budget'><b>Spent: <span class='currencyicon glyphicon-eur'></b></span></div><div style='' style='' data-toggle='tooltip' data-html='true' data-original-title='Real policy implementation.'>Actual</div><div id='pie_"+infrastructurePolicies[i]["policyCode"]+"_Implementation_Level'></div><div style='' style='' data-toggle='tooltip' data-html='true' data-original-title='Policy implementation is effective only when all preceding policies have been implemented effectively.'>Effective</div><div id='pie_"+infrastructurePolicies[i]["policyCode"]+"_Effective_Implementation_Level'></div></div></div>";
+												}
+												script.parentNode.insertBefore(div, script);
+
+											})();
+											for (var i = 0, tot = infrastructurePolicies.length; i < tot; i++) { 
+												
+												addContourPie("pie_"+infrastructurePolicies[i]["policyCode"]+"_Implementation_Level", infrastructurePolicies[i]["policyCode"]+"_Implementation_Level", 0 , infrastructurePolicies[i]["policyCode"]+"_Implementation_Level", infrastructurePolicies[i]["policyCode"]+"_Implementation_Level", "150%");
+												
+												addContourPie("pie_"+infrastructurePolicies[i]["policyCode"]+"_Effective_Implementation_Level", infrastructurePolicies[i]["policyCode"]+"_Effective_Implementation_Level", 0 , infrastructurePolicies[i]["policyCode"]+"_Effective_Implementation_Level", infrastructurePolicies[i]["policyCode"]+"_Effective_Implementation_Level", "150%");
+												
+											}
+										</script>
+									</div>
+								</div>
+								</div>
+								<div class="col-md-6" style="">
+									<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+									<script type="text/javascript">
+										var scripts = document.getElementsByTagName('script');
+										var script = scripts[scripts.length-1];
+										var chartWidth = findChartWidth(script);
+										//addContourChart(chartID, source, categories, chartTitle, yAxisTitle, yLabelFormat, xLabelFormat, yTicks, xTicks, legend, markers, columnChart, histSource, histCat, chartTitleTooltip, chartWidth, stackedColumns);
+										addContourChart("chart_INFRASTRUCTURE_Indicator", "INFRASTRUCTURE_Indicator", "Time", "Infrastructure and Resources Indicator", "Dimensionless", ".3s", undefined, undefined, undefined, undefined, true, false, undefined, undefined, "Infrastructure and Resources Indicator", chartWidth, undefined, "Years");
+									</script>
+									<!--end adding custom script-->
+								</div>
+								</div>
+								</div>
+
+								<div class="tab-pane fade" id="pies-3">
+								<div class="row">
+								<div class="col-md-6" style="">
+								<div class="y-scrollable" style="">
+									<div class="row">
+										<div class="col-md-8 cooperation" data-toggle="tooltip" data-html="true" data-original-title="Results for Cooperation Dimension">Results for Cooperation Dimension</div>
+										<div class="col-md-3 cooperationpie">
+										<div class="cooperation row" style="" data-toggle="tooltip" data-html="true" data-original-title="What is still available from the total budget devoted to this dimension." data-f-bind="COOPERATION_Available_Budget"><b>Available: <span class="currencyicon glyphicon-eur"></span></b></div>
+										<div class="cooperation row" style="" data-toggle="tooltip" data-html="true" data-original-title="Total budget spent on this dimension." data-f-bind="COOPERATION_Used_Budget"><b>Spent: <span class="currencyicon glyphicon-eur"></span></b></div></div>
+
+									</div>
+									<div>
+										<script type="text/javascript">
+											(function() {
+												var scripts= document.getElementsByTagName('script');
+												var script= scripts[scripts.length-1];
+												var div= document.createElement('div');
+												for (var i = 0, tot = cooperationPolicies.length; i < tot; i++) { 
+													div.innerHTML += "<div class='rsl"+cooperationPolicies[i]["Dimension"]+" row'><div class='col-md-8 "+cooperationPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='"+cooperationPolicies[i]["policyDescription"]+"'>"+cooperationPolicies[i]["policyText"]+"</div><div class='col-md-3 "+cooperationPolicies[i]["dimension"]+"pie' style='padding-left: 0px; padding-right: 0px; text-align: center;'><div class='"+cooperationPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='What is still available from the total budget devoted to this policy.' data-f-bind='"+cooperationPolicies[i]["policyCode"]+"_Available_Budget'><b>Available: <span class='currencyicon glyphicon-eur'></b></span></div><div class='"+cooperationPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='Total budget spent on this policy.' data-f-bind='"+cooperationPolicies[i]["policyCode"]+"_Used_Budget'><b>Spent: <span class='currencyicon glyphicon-eur'></b></span></div><div style='' style='' data-toggle='tooltip' data-html='true' data-original-title='Real policy implementation.'>Actual</div><div id='pie_"+cooperationPolicies[i]["policyCode"]+"_Implementation_Level'></div><div style='' style='' data-toggle='tooltip' data-html='true' data-original-title='Policy implementation is effective only when all preceding policies have been implemented effectively.'>Effective</div><div id='pie_"+cooperationPolicies[i]["policyCode"]+"_Effective_Implementation_Level'></div></div></div>";
+												}
+												script.parentNode.insertBefore(div, script);
+
+											})();
+											for (var i = 0, tot = cooperationPolicies.length; i < tot; i++) { 
+												
+												addContourPie("pie_"+cooperationPolicies[i]["policyCode"]+"_Implementation_Level", cooperationPolicies[i]["policyCode"]+"_Implementation_Level", 0 , cooperationPolicies[i]["policyCode"]+"_Implementation_Level", cooperationPolicies[i]["policyCode"]+"_Implementation_Level", "150%");
+												
+												addContourPie("pie_"+cooperationPolicies[i]["policyCode"]+"_Effective_Implementation_Level", cooperationPolicies[i]["policyCode"]+"_Effective_Implementation_Level", 0 , cooperationPolicies[i]["policyCode"]+"_Effective_Implementation_Level", cooperationPolicies[i]["policyCode"]+"_Effective_Implementation_Level", "150%");
+												
+											}
+										</script>
+									</div>
+								</div>
+								</div>
+								<div class="col-md-6" style="">
+									<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+									<script type="text/javascript">
+										var scripts = document.getElementsByTagName('script');
+										var script = scripts[scripts.length-1];
+										var chartWidth = findChartWidth(script);
+										//addContourChart(chartID, source, categories, chartTitle, yAxisTitle, yLabelFormat, xLabelFormat, yTicks, xTicks, legend, markers, columnChart, histSource, histCat, chartTitleTooltip, chartWidth, stackedColumns);
+										addContourChart("chart_COOPERATION_Indicator", "COOPERATION_Indicator", "Time", "Cooperation Indicator", "Dimensionless", ".3s", undefined, undefined, undefined, undefined, true, false, undefined, undefined, "Cooperation Indicator", chartWidth, undefined, "Years");
+									</script>
+									<!--end adding custom script-->
+								</div>
+								</div>
+								</div>
+							</div>
+						</div>
+
+						<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+						<div class="col-md-6" style="">
+							<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+							<div class="col-sm-6" style="">
+								<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+								<script type="text/javascript">
+									//addPowerGauge(gaugeID, source, gaugeTitle, gaugeTitleTooltip, chartWidth);
+									addPowerGauge("gauge_LEADERSHIP_Indicator", "LEADERSHIP_Indicator", "Level of Leadership and Governance", "Level of Leadership and Governance");
+								</script>
+								<!--end adding custom script-->
+								<!--div id="leadership-gauge" class="power-gauge"></div-->
+							</div>
+							<div class="col-sm-6" style="">
+								<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+								<script type="text/javascript">
+									//addPowerGauge(gaugeID, source, gaugeTitle, gaugeTitleTooltip, chartWidth);
+									addPowerGauge("gauge_PREPAREDNESS_Indicator", "PREPAREDNESS_Indicator", "Level of Preparedness", "Level of Preparedness");
+								</script>
+								<!--end adding custom script-->
+								<!--div id="preparedness-gauge" class="power-gauge"></div-->
+							</div>
+							</div>
+							<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+
+							<div class="col-sm-6" style="">
+								<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+								<script type="text/javascript">
+									//addPowerGauge(gaugeID, source, gaugeTitle, gaugeTitleTooltip, chartWidth);
+									addPowerGauge("gauge_INFRASTRUCTURE_Indicator", "INFRASTRUCTURE_Indicator", "Level of Infrastructure and Resources", "Level of Infrastructure and Resources");
+								</script>
+								<!--end adding custom script-->
+								<!--div id="infrastructures-gauge" class="power-gauge"></div-->
+							</div>
+							<div class="col-sm-6" style="">
+								<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+								<script type="text/javascript">
+									//addPowerGauge(gaugeID, source, gaugeTitle, gaugeTitleTooltip, chartWidth);
+									addPowerGauge("gauge_COOPERATION_Indicator", "COOPERATION_Indicator", "Level of Cooperation", "Level of Cooperation");
+								</script>
+								<!--end adding custom script-->
+								<!--div id="cooperation-gauge" class="power-gauge"></div-->
+							</div>
+							</div>
+						</div>
+						<div class="col-md-6" style="">
+							<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+							<script type="text/javascript">
+								var scripts = document.getElementsByTagName('script');
+								var script = scripts[scripts.length-1];
+								var chartWidth = findChartWidth(script);
+								//addContourChart(chartID, source, categories, chartTitle, yAxisTitle, yLabelFormat, xLabelFormat, yTicks, xTicks, legend, markers, columnChart, histSource, histCat, chartTitleTooltip, chartWidth, stackedColumns);
+								addContourChart("chart_Used_Budget", "Used_Budget_Annual", "Time", "Used Budget", "Euros", ".3s", undefined, undefined, undefined, undefined, true, true, undefined, undefined, "Used Budget per Year", chartWidth, undefined, "Years"); // Used_Budget_Annual_Vector
+							</script>
+							<!--end adding custom script-->
+						</div>
+						</div>
+						
+					</div>
+					<!-- end tab 1: Results tab -->
+
+					<!-- begin simulation control buttons div -->
+					<div class="showInSmallScreens"><br><br><br><br><br><br><br><br></div>
+					<br><br><br>
+					<div class="row navbar navbar-default navbar-fixed-bottom">
+
+						<div class="col-md-4">
+						<div class="row">
+							<div class="col-md-4">
+								<div id="div_time" class="" style="text-align: center;" data-toggle="tooltip" data-f-bind="time" data-html="true" data-original-title="Current simulation time"><b>Current year: <span id="span_time">0</span></b></div>
+							</div>
+							<div class="col-md-4">
+								<div id="div_available_budget" class="" style="text-align: center;" data-toggle="tooltip" data-f-bind="Available_Budget" data-html="true" data-original-title="The total budget available for your city to spend on resilience policies this year."><b>Annual budget: <span id="span_available_budget" class="currencyicon glyphicon-eur"></span></b></div>
+							</div>
+							<div class="col-md-4">
+								<div id="div_budget_left" class="" style="text-align: center;" data-toggle="tooltip" data-html="true" data-original-title="Sum of your budget decisions subtracted from the annual budget. The sum of your decision cannot exceed annual budget."><b>Unbudgeted: <span id="span_budget_left" class="currencyicon glyphicon-eur"></span></b></div>
+							</div>
+						</div>
+						</div>
+						<div class="col-md-2">
+							<button id="budgetButton" type="button" style="display: block;" class="btn btn-block" data-toggle="tooltip" data-html="true" data-original-title="Change budget of the next year">ANNUAL BUDGET <span style="border-style: groove;padding-top: 2px;padding-left: 1px;padding-right: 3px;padding-bottom: 2px;" class="currencyicon glyphicon-eur"></span></button><span class="btn-shadow"></span>
+						</div>
+						<div class="col-md-2">
+							<button id="advanceSimulationButton" type="button" style="" onclick="sendDecisions(1)" data-toggle="tooltip" data-html="true" data-original-title="Simulate the results for the next year" class="btn btn-block"><span class="glyphicon glyphicon-play"></span> ADVANCE 1 YEAR</button><span class="btn-shadow"></span>
+						</div>
+
+						<div class="col-md-2">
+							<button id="resetSimulationButton" onclick="resetSimulation(0)" class="btn btn-block" data-toggle="tooltip" data-html="true" data-original-title="Start the simulation again from your initial situation"><span class="glyphicon glyphicon-repeat"></span> NEW SCENARIO</button><span class="btn-shadow"></span>
+						</div>
+						<div class="col-md-2">
+							<span id="toggleResultsButton" data-toggle="tooltip" data-html="true" data-original-title="Go to the results screen"><button onclick="$('#toggleResultsButton, #toggleSimButton').toggle();" class="btn btn-block" data-toggle="tab" href="#tabs-1"><span class="glyphicon glyphicon-stats"></span> SIMULATION RESULTS</button><span class="btn-shadow"></span></span>
+							<span id="toggleSimButton" data-toggle="tooltip" data-html="true" data-original-title="Go to the decision screen"><button onclick="$('#toggleResultsButton, #toggleSimButton').toggle();" class="btn btn-block" data-toggle="tab" href="#tabs-0"><span class="glyphicon glyphicon-check"></span> DECISIONS</button><span class="btn-shadow"></span></span>
+						</div>
+					</div>
+					<!-- end simulation control buttons div -->
+				</div>
+			</div>
+			<!-- end simulation control and results tab -->
+			
+			<!-- begin scenario details tab -->
+			<div class="content-wrapper container-fluid tab-pane fade" id="maintabs-2">
+				<div class="container-fluid">
+					<div class="showInSmallScreens"><br><br></div><br><br>
+					<div class="page-header">
+					<div class="row">
+						<div class="col-md-8">
+							<h3 id="scenarioDetailsContainerHeader">Scenario Details</h3>
+						</div>
+						<div class="col-md-4">
+							<span data-toggle="tooltip" data-html="true" data-original-title="Go back to simulation"><button id="goBackSimulationButton" class="btn btn-block no-print" data-toggle="tab" href="#maintabs-1"><span class="glyphicon glyphicon glyphicon-triangle-left"></span> Go back</button><span class="btn-shadow"></span></span>
+						</div>
+					</div></div>
+					<div class="row">
+						<h4>Annual Spending Decisions (per Policy):</h4>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="xy-scrollable">
+								<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+								<script type="text/javascript">
+									//addSingleScenarioTable(singleScenarioTableID, source, categories, tableTitle,  tableTitleTooltip, rowsTitle, columnsTitle, cellFormat, tableWidth);
+									addSingleScenarioTable("SST_Devoted_Budget_Annual_Vector", "Devoted_Budget_Annual_Vector", "Time", "Annual Devoted Budget per Policy", "Annual Devoted Budget per Policy","Time", "Policies", ".3s");
+								</script>
+								<!--end adding custom script-->						
+							</div>
+						</div>
+						<div class="col-md-6">
+						<!--div class="chart-container" id="SSC_Devoted_Budget_Annual_Vector" data-f-c-source="Devoted_Budget_Annual_Vector" data-f-c-categories="Time" style="width: 100%;"></div-->
+							<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+							<script type="text/javascript">
+								var scripts = document.getElementsByTagName('script');
+								var script = scripts[scripts.length-1];
+								var chartWidth = findChartWidth(script);
+
+//									addContourChart("chart_LEADERSHIP_Indicator", "LEADERSHIP_Indicator", "Time", "Leadership and Governance Indicator", "Dimensionless", ".3s", undefined, undefined, undefined, undefined, true, false, undefined, undefined, "Leadership and Governance Indicator", "525px", undefined, "Years");
+////								addSingleScenarioChart("SSC_chart_LEADERSHIP_Indicator", "LEADERSHIP_Indicator", "Time", "LEADERSHIP Indicator", "DMNL", ".3s", undefined, undefined, undefined, undefined, true, false, undefined, undefined, "LEADERSHIP Indicator", "525px", true, "Years"); // Devoted_Budget_Annual_Vector
+
+								//addSingleScenarioChart(chartID, source, categories, chartTitle, yAxisTitle, yLabelFormat, xLabelFormat, yTicks, xTicks, legend, markers, columnChart, histSource, histCat, chartTitleTooltip, chartWidth, stackedColumns);
+
+								addSingleScenarioChart("SSC_Devoted_Budget_Annual_Vector", "Devoted_Budget_Annual_Vector", "Time", "Annual Devoted Budget per Policy", "Euros", ".3s", undefined, undefined, undefined, undefined, true, true, undefined, undefined, "Annual Devoted Budget per Policy", chartWidth, true, "Years"); // Devoted_Budget_Annual_Vector
+
+								/*addSingleScenarioChart("SSC_Devoted_Budget_Annual_Vector", "Devoted_Budget_Annual_Vector", "Time", "Annual Devoted Budget per Policy", "Euros", ".3s", undefined, undefined, undefined, undefined, true, true, undefined, undefined, "Annual Devoted Budget per Policy", undefined, true, "Years"); // Devoted_Budget_Annual_Vector*/
+							</script>
+							<!--end adding custom script-->						
+						</div>
+					</div>
+					<div class="row">
+						<h4>Indicators:</h4>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="xy-scrollable">
+								<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+								<script type="text/javascript">
+									//addSingleScenarioTable(singleScenarioTableID, source, categories, tableTitle,  tableTitleTooltip, rowsTitle, columnsTitle, cellFormat, tableWidth);
+									addSingleScenarioTable("SST_Dimensions_Indicators_Vector", "Dimensions_Indicators_Vector", "Time", "Dimensions", "Dimensions","Time", "Indicators", ".3s", "100%");
+								</script>
+								<!--end adding custom script-->						
+							</div>
+						</div>
+						<div class="col-md-6">
+							<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+							<script type="text/javascript">
+								var scripts = document.getElementsByTagName('script');
+								var script = scripts[scripts.length-1];
+								var chartWidth = findChartWidth(script);
+
+								//addSingleScenarioChart(chartID, source, categories, chartTitle, yAxisTitle, yLabelFormat, xLabelFormat, yTicks, xTicks, legend, markers, columnChart, histSource, histCat, chartTitleTooltip, chartWidth, stackedColumns);
+								addSingleScenarioChart("SSC_Dimensions_Indicators_Vector", "Dimensions_Indicators_Vector", "Time", "Dimensions Indicators", "Dimensionless", ".3s", undefined, undefined, undefined, undefined, true, false, undefined, undefined, "Dimensions Indicators", chartWidth, false, "Years"); // Used_Budget_Annual_Vector
+							</script>
+							<!--end adding custom script-->
+						</div>
+					</div>
+					<div class="row">
+						<h4>Annual Expenses (per dimension):</h4>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="xy-scrollable">
+								<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+								<script type="text/javascript">
+									//addSingleScenarioTable(singleScenarioTableID, source, categories, tableTitle,  tableTitleTooltip, rowsTitle, columnsTitle, cellFormat, tableWidth);
+									addSingleScenarioTable("SST_Used_Budget_Annual_Vector", "Used_Budget_Annual_Vector", "Time", "Annual Used Budget per Dimension", "Annual Used Budget per Dimension","Time", "Policies", ".3s", "100%");
+								</script>
+								<!--end adding custom script-->						
+							</div>
+						</div>
+						<div class="col-md-6">
+							<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+							<script type="text/javascript">
+								var scripts = document.getElementsByTagName('script');
+								var script = scripts[scripts.length-1];
+								var chartWidth = findChartWidth(script);
+
+								//addSingleScenarioChart(chartID, source, categories, chartTitle, yAxisTitle, yLabelFormat, xLabelFormat, yTicks, xTicks, legend, markers, columnChart, histSource, histCat, chartTitleTooltip, chartWidth, stackedColumns);
+								addSingleScenarioChart("SSC_Used_Budget_Annual_Vector", "Used_Budget_Annual_Vector", "Time", "Annual Used Budget per Dimension", "Euros", ".3s", undefined, undefined, undefined, undefined, true, true, undefined, undefined, "Annual Used Budget per Dimension", chartWidth, false, "Years"); // Used_Budget_Annual_Vector
+							</script>
+							<!--end adding custom script-->
+						</div>
+					</div>
+					<div class="row">
+						<h4>Cumulative Expenses (per dimension):</h4>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="xy-scrollable">
+								<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+								<script type="text/javascript">
+									//addSingleScenarioTable(singleScenarioTableID, source, categories, tableTitle,  tableTitleTooltip, rowsTitle, columnsTitle, cellFormat, tableWidth);
+									addSingleScenarioTable("SST_Used_Budget_Vector", "Used_Budget_Vector", "Time", "Accumulated Used Budget per Dimension", "Accumulated Used Budget per Dimension","Time", "Dimensions", ".3s", "100%");
+								</script>
+								<!--end adding custom script-->						
+							</div>
+						</div>
+						<div class="col-md-6">
+							<!--begin adding custom script for each chart exactly where you want it to appear in the HTML-->
+							<script type="text/javascript">
+								var scripts = document.getElementsByTagName('script');
+								var script = scripts[scripts.length-1];
+								var chartWidth = findChartWidth(script);
+
+								//addSingleScenarioChart(chartID, source, categories, chartTitle, yAxisTitle, yLabelFormat, xLabelFormat, yTicks, xTicks, legend, markers, columnChart, histSource, histCat, chartTitleTooltip, chartWidth, stackedColumns);
+								addSingleScenarioChart("SSC_Used_Budget_Vector", "Used_Budget_Vector", "Time", "Accumulated Used Budget per Dimension", "Euros", ".3s", undefined, undefined, undefined, undefined, true, true, undefined, undefined, "Accumulated Used Budget per Dimension", chartWidth, true, "Years"); // Used_Budget_Vector
+							</script>
+							<!--end adding custom script-->
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<!-- end scenario details tab -->
+		</div>
+		<!-- end all GUI tabs -->
+		
+        <div class="loading-indicator">Loading...</div>
+	
+	<!--form id = "iniForm" action=""-->
+
+
+        <!-- begin Budget modal dialogue -->	
+        <div id="budgetModal" class="modal fade" aria-hidden="true" style="display: none;">
+            <div class="modal-backdrop fade in"></div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">City Annual Budget</h4>
+                    </div>
+                    <div class="modal-body"	draggable="false" data-ub-version="%package_version%" data-ub-component="Text Block" style="transform: translate3d(0px, 0px, 0px);">
+                        <p><span class="modalMessage">Indicate your budget for the next year</span> (in <span class="currency">Euros</span>):</p>
+						<div class=""><input id="text_Available_Budget_Initial" name="text_Available_Budget_Initial" style="width:85%;display:inline-block;" class="form-control allownumericwithoutdecimal" data-f-bind="Available_Budget_Initial" oninput="$( this.nextElementSibling ).text( d3.format('.3s' )( ( ( this.value == '' ) || isNaN( this.value ) ) ? 0 : this.value ) )" onchange="$( this.nextElementSibling ).text( d3.format('.3s' )( ( ( this.value == '' ) || isNaN( this.value ) ) ? 0 : this.value ) )" onblur="this.value= ( ( this.value == '' ) || isNaN( this.value ) ) ? 0 : parseInt(this.value)" type="text">
+						<span class="range-value currencyicon glyphicon-eur"></span>						
+						</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end Budget modal dialogue -->	
+
+        <!-- begin Initialisation modal dialogue -->	
+        <div id="initialisationModal" class="modal fade" aria-hidden="true" style="display: none;">
+            <div class="modal-backdrop fade in"></div>
+            <div class="modal-admin">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">City SMART Stage</h4>
+                    </div>
+                    <div class="modal-body"	draggable="false" data-ub-version="%package_version%" data-ub-component="Text Block" style="transform: translate3d(0px, 0px, 0px);">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<p>Select your city's current SMART stage:</p>
+								<div class="col-md-1"></div>
+								<div class="col-md-2">
+								  <button type="button" onclick="initialiseSTARTStage()" class="btn btn-block">STARTING</button>
+								</div>
+								<div class="col-md-2">
+									<button type="button" onclick="initialiseMODERATEStage()" class="btn btn-block">MODERATE</button>
+								</div>
+								<div class="col-md-2">
+								  <button type="button" onclick="initialiseADVANCEDStage()" class="btn btn-block">ADVANCED</button>
+								</div>
+								<div class="col-md-2">
+								  <button type="button" onclick="initialiseROBUSTStage()" class="btn btn-block">ROBUST</button>
+								</div>
+								<div class="col-md-2">
+								  <button type="button" onclick="initialiseVERTEBRAEStage()" class="btn btn-block">VERTEBRATE</button>
+								</div>
+								<div class="col-md-1"></div>
+							</div>
+						</div>
+						<!--div><div-->
+						<div class="">
+							<p>Customise the Policy Implementation Level of individual policies to suit your city's current state:</p>
+							<!-- begin -->
+							<div class="content-wrapper container-fluid">
+								<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+						
+						<!--div class="panel panel-default">
+							<div class="panel-body" style="display: block;">
+								<div class="row"-->
+									<div class="col-md-2 leadership" data-toggle="tooltip" data-html="true" data-original-title="Leadership and Governance affect the decision-making process of the CITY. Commitment by the leaders to a resilience culture, values and vision is essential for promoting effective strategies, inclusive decision-making and the engagement of relevant city stakeholders. All government levels should develop an organizational culture of enthusiasm for challenge, agility, flexibility, adaptive capacity and innovation.">Leadership and Governance</div>
+									<div class="col-md-10">
+										<script type="text/javascript">
+											(function() {
+												var scripts= document.getElementsByTagName('script');
+												var script= scripts[scripts.length-1];
+												var div= document.createElement('div');
+												for (var i = 0, tot = leadershipPolicies.length; i < tot; i++) {
+													div.innerHTML += "<div class='stg"+leadershipPolicies[i]["dimension"]+" row'><div class='col-md-9 "+leadershipPolicies[i]["dimension"]+"' data-toggle='tooltip' data-html='true' data-original-title='"+leadershipPolicies[i]["policyDescription"]+"'>"+leadershipPolicies[i]["policyText"]+"</div><div class='col-md-3' style=''><div class=''><input id='range_"+leadershipPolicies[i]["policyCode"]+"_Implementation_Level_Initial' name='range_"+leadershipPolicies[i]["policyCode"]+"_Implementation_Level_Initial' style='width:80%;display:inline-block;' class='' oninput='$(this.nextElementSibling).text(this.value+\"%\")' onchange='$(this.nextElementSibling).text(this.value+\"%\")' data-f-bind='"+leadershipPolicies[i]["policyCode"]+"_Implementation_Level_Initial' min='0' max='100' step='1' type='range'><span id='span_"+leadershipPolicies[i]["policyCode"]+"_Implementation_Level_Initial' class='range-value' data-f-bind='"+leadershipPolicies[i]["policyCode"]+"_Implementation_Level_Initial'></span></div></div></div>";
+												}
+												script.parentNode.insertBefore(div, script);
+											})();
+										</script>
+									</div>
+								</div>
+								<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+									<div class="col-md-2 preparedness" data-toggle="tooltip" data-html="true" data-original-title="Preparedness refers to anticipation of future needs and adapting the CITY functions accordingly. Preparedness can be developed at all levels of society, from individuals and communities to leaders and governments. It also includes being prepared for the unexpected, by increasing flexibility and the CITY’s adaptive capacity and skills.">Preparedness</div>
+
+									<div class="col-md-10">
+										<script type="text/javascript">
+											(function() {
+												var scripts= document.getElementsByTagName('script');
+												var script= scripts[scripts.length-1];
+												var div= document.createElement('div');
+												for (var i = 0, tot = preparednessPolicies.length; i < tot; i++) {
+													div.innerHTML += "<div class='stg"+preparednessPolicies[i]["dimension"]+" row'><div class='col-md-9 "+preparednessPolicies[i]["dimension"]+"' data-toggle='tooltip' data-html='true' data-original-title='"+preparednessPolicies[i]["policyDescription"]+"'>"+preparednessPolicies[i]["policyText"]+"</div><div class='col-md-3' style=''><div class=''><input id='range_"+preparednessPolicies[i]["policyCode"]+"_Implementation_Level_Initial' name='range_"+preparednessPolicies[i]["policyCode"]+"_Implementation_Level_Initial' style='width:80%;display:inline-block;' class='' oninput='$(this.nextElementSibling).text(this.value+\"%\")' onchange='$(this.nextElementSibling).text(this.value+\"%\")' data-f-bind='"+preparednessPolicies[i]["policyCode"]+"_Implementation_Level_Initial' min='0' max='100' step='1' type='range'><span id='span_"+preparednessPolicies[i]["policyCode"]+"_Implementation_Level_Initial' class='range-value' data-f-bind='"+preparednessPolicies[i]["policyCode"]+"_Implementation_Level_Initial'></span></div></div></div>";
+
+												}
+												script.parentNode.insertBefore(div, script);
+											})();
+										</script>
+									</div>
+								</div>
+								<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+									<div class="col-md-2 infrastructure" data-toggle="tooltip" data-html="true" data-original-title="The CITY infrastructure requires robustness to resist and absorb hazards through the preservation and restoration of its essential functions. This requires redundancy, risk management and continues work on decreasing vulnerabilities apart from the deployment of resources. The resources include all assets, people, skills, information, technology (including plant and equipment), premises, and supplies and information (whether electronic or not) that an organization needs to have available to use, when needed, to operate and meet its objectives.">Infrastructure and resources</div>
+									<div class="col-md-10">
+										<script type="text/javascript">
+											(function() {
+												var scripts= document.getElementsByTagName('script');
+												var script= scripts[scripts.length-1];
+												var div= document.createElement('div');
+												for (var i = 0, tot = infrastructurePolicies.length; i < tot; i++) {
+													div.innerHTML += "<div class='stg"+infrastructurePolicies[i]["dimension"]+" row'><div class='col-md-9 "+infrastructurePolicies[i]["dimension"]+"' data-toggle='tooltip' data-html='true' data-original-title='"+infrastructurePolicies[i]["policyDescription"]+"'>"+infrastructurePolicies[i]["policyText"]+"</div><div class='col-md-3' style=''><div class=''><input id='range_"+infrastructurePolicies[i]["policyCode"]+"_Implementation_Level_Initial' name='range_"+infrastructurePolicies[i]["policyCode"]+"_Implementation_Level_Initial' style='width:80%;display:inline-block;' class='' oninput='$(this.nextElementSibling).text(this.value+\"%\")' onchange='$(this.nextElementSibling).text(this.value+\"%\")' data-f-bind='"+infrastructurePolicies[i]["policyCode"]+"_Implementation_Level_Initial' min='0' max='100' step='1' type='range'><span id='span_"+infrastructurePolicies[i]["policyCode"]+"_Implementation_Level_Initial' class='range-value' data-f-bind='"+infrastructurePolicies[i]["policyCode"]+"_Implementation_Level_Initial'></span></div></div></div>";
+												}
+												script.parentNode.insertBefore(div, script);
+											})();
+										</script>
+									</div>
+								</div>
+								<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+									<div class="col-md-2 cooperation" data-toggle="tooltip" data-html="true" data-original-title="Cooperation refers to working or acting together for a common purpose or benefit. Cooperation is developed within the city and at a cross-regional level. The necessary stakeholders across city and regional sectors including European cities will be considered. Cooperation is also developed at community level involving different stakeholders such as volunteer groups and citizens that show the ability to self-organise.">Cooperation</div>
+									<div class="col-md-10">
+										<script type="text/javascript">
+											(function() {
+												var scripts= document.getElementsByTagName('script');
+												var script= scripts[scripts.length-1];
+												var div= document.createElement('div');
+												for (var i = 0, tot = cooperationPolicies.length; i < tot; i++) {
+													div.innerHTML += "<div class='stg"+cooperationPolicies[i]["dimension"]+" row'><div class='col-md-9 "+cooperationPolicies[i]["dimension"]+"' data-toggle='tooltip' data-html='true' data-original-title='"+cooperationPolicies[i]["policyDescription"]+"'>"+cooperationPolicies[i]["policyText"]+"</div><div class='col-md-3' style=''><div class=''><input id='range_"+cooperationPolicies[i]["policyCode"]+"_Implementation_Level_Initial' name='range_"+cooperationPolicies[i]["policyCode"]+"_Implementation_Level_Initial' style='width:80%;display:inline-block;' class='' oninput='$(this.nextElementSibling).text(this.value+\"%\")' onchange='$(this.nextElementSibling).text(this.value+\"%\")' data-f-bind='"+cooperationPolicies[i]["policyCode"]+"_Implementation_Level_Initial' min='0' max='100' step='1' type='range'><span id='span_"+cooperationPolicies[i]["policyCode"]+"_Implementation_Level_Initial' class='range-value' data-f-bind='"+cooperationPolicies[i]["policyCode"]+"_Implementation_Level_Initial'></span></div></div></div>";
+
+												}
+												script.parentNode.insertBefore(div, script);
+											})();
+										</script>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end Initialisation modal dialogue -->	
+
+
+        <!-- begin ini settings modal dialogue -->	
+        <div id="iniSettingsModal" class="modal fade" aria-hidden="true" style="display: none;">
+            <div class="modal-backdrop fade in"></div>
+            <div class="modal-admin">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Settings</h4>
+                    </div>
+                    <div class="modal-body"	draggable="false" data-ub-version="%package_version%" data-ub-component="Text Block" style="transform: translate3d(0px, 0px, 0px);">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="col-md-6">
+									<p>Enter your city name:</p>
+									<input id="cityNameInput_Initial" name="cityNameInput_Initial" style="" onchange="$('#cityName_div').text((this.value.length>0 && this.value.trim().length>0)?' - '+this.value:' - Example City')" class="form-control" type="text" placeholder="Example City">
+								</div>
+								<div class="col-md-6">
+									<p>Select your currency:</p>
+									<div id="currencySelector_div" class="form-group"></div>
+								</div>
+							</div>
+						</div>
+						<!--div><div-->
+						<div class="">
+							<p>Indicate the following values to be changed in the model (all money values cannot be less than 1, and all time values cannot be less than 0.1):</p>
+							<div class="">
+								<!-- begin -->
+								<div class="content-wrapper container-fluid">
+									<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+										<div class="col-md-2 leadership" style="" data-toggle="tooltip" data-html="true" data-original-title="Leadership and Governance affect the decision-making process of the CITY. Commitment by the leaders to a resilience culture, values and vision is essential for promoting effective strategies, inclusive decision-making and the engagement of relevant city stakeholders. All government levels should develop an organizational culture of enthusiasm for challenge, agility, flexibility, adaptive capacity and innovation.">Leadership and Governance
+										</div>
+										<div class="col-md-10">
+											<script type="text/javascript">
+												(function() {
+													var scripts= document.getElementsByTagName('script');
+													var script= scripts[scripts.length-1];
+													var div= document.createElement('div');
+													for (var i = 0, tot = leadershipPolicies.length; i < tot; i++) { 
+														div.innerHTML += "<div class='trg"+leadershipPolicies[i]["Dimension"]+" row'><div class='col-md-6 "+leadershipPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='"+leadershipPolicies[i]["policyDescription"]+"'>"+leadershipPolicies[i]["policyText"]+"</div><div class='col-md-6'><div class='row'><div class='col-md-6 "+leadershipPolicies[i]["dimension"]+"' style='text-align: center;'>Policy full implementation required time in years:</div><div class='col-md-6' style=''><div class=''><input id='range_"+leadershipPolicies[i]["policyCode"]+"_Full_Implementation_Required_Time_Initial' name='range_"+leadershipPolicies[i]["policyCode"]+"_Full_Implementation_Required_Time_Initial' style='width:70%;display:inline-block;' class='form-control allownumericwithdecimal' oninput='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1) ) )' onchange='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1) ) )' onblur='this.value= ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1)' data-f-bind='"+leadershipPolicies[i]["policyCode"]+"_Full_Implementation_Required_Time' min='0' max='100' step='1' type='text'><span class='range-value'></span></div></div>  <div class='col-md-6 "+leadershipPolicies[i]["dimension"]+"' style='text-align: center;'>Policy full depletion required time in years:</div><div class='col-md-6' style=''><div class=''><input id='range_"+leadershipPolicies[i]["policyCode"]+"_Full_Depletion_Required_Time_Initial' name='range_"+leadershipPolicies[i]["policyCode"]+"_Full_Depletion_Required_Time_Initial' style='width:70%;display:inline-block;' class='form-control allownumericwithdecimal' oninput='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1) ) )' onchange='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1) ) )' onblur='this.value= ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1)' data-f-bind='"+leadershipPolicies[i]["policyCode"]+"_Full_Depletion_Required_Time' min='0' max='100' step='1' type='text'><span class='range-value'></span></div></div>   <div class='col-md-6 "+leadershipPolicies[i]["dimension"]+"' style='text-align: center;'><p style='margin: 0'>Policy total implementation cost in <span class='currency'>Euros</span>:</p></div><div class='col-md-6' style=''><div class=''><input id='range_"+leadershipPolicies[i]["policyCode"]+"_Full_Implementation_Cost_Initial' name='range_"+leadershipPolicies[i]["policyCode"]+"_Full_Implementation_Cost_Initial' style='width:70%;display:inline-block;' class='form-control allownumericwithoutdecimal' oninput='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 1 ) ) ? 1 : this.value ) )' onchange='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 1 ) ) ? 1 : this.value ) )' onblur='this.value= ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 1 ) ) ? 1 : parseInt(this.value)' data-f-bind='"+leadershipPolicies[i]["policyCode"]+"_Full_Implementation_Cost' min='0' max='100' step='1' type='text'><span class='range-value currencyicon glyphicon-eur'></span></div></div>  </div></div></div>"
+													}
+													script.parentNode.insertBefore(div, script);
+												})();
+											</script>
+										</div>
+									</div>
+									<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+										<div class="col-md-2 preparedness" style="" data-toggle="tooltip" data-html="true" data-original-title="Preparedness refers to anticipation of future needs and adapting the CITY functions accordingly. Preparedness can be developed at all levels of society, from individuals and communities to leaders and governments. It also includes being prepared for the unexpected, by increasing flexibility and the CITY’s adaptive capacity and skills.">Preparedness
+										</div>
+										<div class="col-md-10">
+											<script type="text/javascript">
+												(function() {
+													var scripts= document.getElementsByTagName('script');
+													var script= scripts[scripts.length-1];
+													var div= document.createElement('div');
+													for (var i = 0, tot = preparednessPolicies.length; i < tot; i++) { 
+														div.innerHTML += "<div class='trg"+preparednessPolicies[i]["Dimension"]+" row'><div class='col-md-6 "+preparednessPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='"+preparednessPolicies[i]["policyDescription"]+"'>"+preparednessPolicies[i]["policyText"]+"</div><div class='col-md-6'><div class='row'><div class='col-md-6 "+preparednessPolicies[i]["dimension"]+"' style='text-align: center;'>Policy full implementation required time in years:</div><div class='col-md-6' style=''><div class=''><input id='range_"+preparednessPolicies[i]["policyCode"]+"_Full_Implementation_Required_Time_Initial' name='range_"+preparednessPolicies[i]["policyCode"]+"_Full_Implementation_Required_Time_Initial' style='width:70%;display:inline-block;' class='form-control allownumericwithdecimal' oninput='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1) ) )' onchange='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1) ) )' onblur='this.value= ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1)' data-f-bind='"+preparednessPolicies[i]["policyCode"]+"_Full_Implementation_Required_Time' min='0' max='100' step='1' type='text'><span class='range-value'></span></div></div>  <div class='col-md-6 "+preparednessPolicies[i]["dimension"]+"' style='text-align: center;'>Policy full depletion required time in years:</div><div class='col-md-6' style=''><div class=''><input id='range_"+preparednessPolicies[i]["policyCode"]+"_Full_Depletion_Required_Time_Initial' name='range_"+preparednessPolicies[i]["policyCode"]+"_Full_Depletion_Required_Time_Initial' style='width:70%;display:inline-block;' class='form-control allownumericwithdecimal' oninput='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1) ) )' onchange='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1) ) )' onblur='this.value= ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1)' data-f-bind='"+preparednessPolicies[i]["policyCode"]+"_Full_Depletion_Required_Time' min='0' max='100' step='1' type='text'><span class='range-value'></span></div></div>   <div class='col-md-6 "+preparednessPolicies[i]["dimension"]+"' style='text-align: center;'><p style='margin: 0'>Policy total implementation cost in <span class='currency'>Euros</span>:</p></div><div class='col-md-6' style=''><div class=''><input id='range_"+preparednessPolicies[i]["policyCode"]+"_Full_Implementation_Cost_Initial' name='range_"+preparednessPolicies[i]["policyCode"]+"_Full_Implementation_Cost_Initial' style='width:70%;display:inline-block;' class='form-control allownumericwithoutdecimal' oninput='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 1 ) ) ? 1 : this.value ) )' onchange='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 1 ) ) ? 1 : this.value ) )' onblur='this.value= ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 1 ) ) ? 1 : parseInt(this.value)' data-f-bind='"+preparednessPolicies[i]["policyCode"]+"_Full_Implementation_Cost' min='0' max='100' step='1' type='text'><span class='range-value currencyicon glyphicon-eur'></span></div></div>  </div></div></div>"
+													}
+													script.parentNode.insertBefore(div, script);
+												})();
+											</script>
+										</div>
+									</div>
+									<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+										<div class="col-md-2 infrastructure" data-toggle="tooltip" data-html="true" data-original-title="The CITY infrastructure requires robustness to resist and absorb hazards through the preservation and restoration of its essential functions. This requires redundancy, risk management and continues work on decreasing vulnerabilities apart from the deployment of resources. The resources include all assets, people, skills, information, technology (including plant and equipment), premises, and supplies and information (whether electronic or not) that an organization needs to have available to use, when needed, to operate and meet its objectives.">Infrastructure and Resources
+										</div>
+										<div class="col-md-10">
+											<script type="text/javascript">
+												(function() {
+													var scripts= document.getElementsByTagName('script');
+													var script= scripts[scripts.length-1];
+													var div= document.createElement('div');
+													for (var i = 0, tot = infrastructurePolicies.length; i < tot; i++) { 
+														div.innerHTML += "<div class='trg"+infrastructurePolicies[i]["Dimension"]+" row'><div class='col-md-6 "+infrastructurePolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='"+infrastructurePolicies[i]["policyDescription"]+"'>"+infrastructurePolicies[i]["policyText"]+"</div><div class='col-md-6'><div class='row'><div class='col-md-6 "+infrastructurePolicies[i]["dimension"]+"' style='text-align: center;'>Policy full implementation required time in years:</div><div class='col-md-6' style=''><div class=''><input id='range_"+infrastructurePolicies[i]["policyCode"]+"_Full_Implementation_Required_Time_Initial' name='range_"+infrastructurePolicies[i]["policyCode"]+"_Full_Implementation_Required_Time_Initial' style='width:70%;display:inline-block;' class='form-control allownumericwithdecimal' oninput='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1) ) )' onchange='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1) ) )' onblur='this.value= ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1)' data-f-bind='"+infrastructurePolicies[i]["policyCode"]+"_Full_Implementation_Required_Time' min='0' max='100' step='1' type='text'><span class='range-value'></span></div></div>  <div class='col-md-6 "+infrastructurePolicies[i]["dimension"]+"' style='text-align: center;'>Policy full depletion required time in years:</div><div class='col-md-6' style=''><div class=''><input id='range_"+infrastructurePolicies[i]["policyCode"]+"_Full_Depletion_Required_Time_Initial' name='range_"+infrastructurePolicies[i]["policyCode"]+"_Full_Depletion_Required_Time_Initial' style='width:70%;display:inline-block;' class='form-control allownumericwithdecimal' oninput='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1) ) )' onchange='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1) ) )' onblur='this.value= ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1)' data-f-bind='"+infrastructurePolicies[i]["policyCode"]+"_Full_Depletion_Required_Time' min='0' max='100' step='1' type='text'><span class='range-value'></span></div></div>   <div class='col-md-6 "+infrastructurePolicies[i]["dimension"]+"' style='text-align: center;'><p style='margin: 0'>Policy total implementation cost in <span class='currency'>Euros</span>:</p></div><div class='col-md-6' style=''><div class=''><input id='range_"+infrastructurePolicies[i]["policyCode"]+"_Full_Implementation_Cost_Initial' name='range_"+infrastructurePolicies[i]["policyCode"]+"_Full_Implementation_Cost_Initial' style='width:70%;display:inline-block;' class='form-control allownumericwithoutdecimal' oninput='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 1 ) ) ? 1 : this.value ) )' onchange='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 1 ) ) ? 1 : this.value ) )' onblur='this.value= ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 1 ) ) ? 1 : parseInt(this.value)' data-f-bind='"+infrastructurePolicies[i]["policyCode"]+"_Full_Implementation_Cost' min='0' max='100' step='1' type='text'><span class='range-value currencyicon glyphicon-eur'></span></div></div>  </div></div></div>"
+													}
+													script.parentNode.insertBefore(div, script);
+												})();
+											</script>
+										</div>
+									</div>
+									<div style="" data-ub-version="%package_version%" data-ub-component="Row" class="row">
+										<div class="col-md-2 cooperation" data-toggle="tooltip" data-html="true" data-original-title="Cooperation refers to working or acting together for a common purpose or benefit. Cooperation is developed within the city and at a cross-regional level. The necessary stakeholders across city and regional sectors including European cities will be considered. Cooperation is also developed at community level involving different stakeholders such as volunteer groups and citizens that show the ability to self-organise.">Cooperation
+										</div>
+										<div class="col-md-10">
+											<script type="text/javascript">
+												(function() {
+													var scripts= document.getElementsByTagName('script');
+													var script= scripts[scripts.length-1];
+													var div= document.createElement('div');
+													for (var i = 0, tot = cooperationPolicies.length; i < tot; i++) { 
+														div.innerHTML += "<div class='trg"+cooperationPolicies[i]["Dimension"]+" row'><div class='col-md-6 "+cooperationPolicies[i]["dimension"]+"' style='' data-toggle='tooltip' data-html='true' data-original-title='"+cooperationPolicies[i]["policyDescription"]+"'>"+cooperationPolicies[i]["policyText"]+"</div><div class='col-md-6'><div class='row'><div class='col-md-6 "+cooperationPolicies[i]["dimension"]+"' style='text-align: center;'>Policy full implementation required time in years:</div><div class='col-md-6' style=''><div class=''><input id='range_"+cooperationPolicies[i]["policyCode"]+"_Full_Implementation_Required_Time_Initial' name='range_"+cooperationPolicies[i]["policyCode"]+"_Full_Implementation_Required_Time_Initial' style='width:70%;display:inline-block;' class='form-control allownumericwithdecimal' oninput='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1) ) )' onchange='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1) ) )' onblur='this.value= ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1)' data-f-bind='"+cooperationPolicies[i]["policyCode"]+"_Full_Implementation_Required_Time' min='0' max='100' step='1' type='text'><span class='range-value'></span></div></div>  <div class='col-md-6 "+cooperationPolicies[i]["dimension"]+"' style='text-align: center;'>Policy full depletion required time in years:</div><div class='col-md-6' style=''><div class=''><input id='range_"+cooperationPolicies[i]["policyCode"]+"_Full_Depletion_Required_Time_Initial' name='range_"+cooperationPolicies[i]["policyCode"]+"_Full_Depletion_Required_Time_Initial' style='width:70%;display:inline-block;' class='form-control allownumericwithdecimal' oninput='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1) ) )' onchange='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1) ) )' onblur='this.value= ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 0.1 ) ) ? 0.1 : parseFloat(this.value).toFixed(1)' data-f-bind='"+cooperationPolicies[i]["policyCode"]+"_Full_Depletion_Required_Time' min='0' max='100' step='1' type='text'><span class='range-value'></span></div></div>   <div class='col-md-6 "+cooperationPolicies[i]["dimension"]+"' style='text-align: center;'><p style='margin: 0'>Policy total implementation cost in <span class='currency'>Euros</span>:</p></div><div class='col-md-6' style=''><div class=''><input id='range_"+cooperationPolicies[i]["policyCode"]+"_Full_Implementation_Cost_Initial' name='range_"+cooperationPolicies[i]["policyCode"]+"_Full_Implementation_Cost_Initial' style='width:70%;display:inline-block;' class='form-control allownumericwithoutdecimal' oninput='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 1 ) ) ? 1 : this.value ) )' onchange='$( this.nextElementSibling ).text( d3.format(\".3s\" )( ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 1 ) ) ? 1 : this.value ) )' onblur='this.value= ( ( this.value == \"\" ) || isNaN( this.value ) || ( this.value < 1 ) ) ? 1 : parseInt(this.value)' data-f-bind='"+cooperationPolicies[i]["policyCode"]+"_Full_Implementation_Cost' min='0' max='100' step='1' type='text'><span class='range-value currencyicon glyphicon-eur'></span></div></div>  </div></div></div>"
+													}
+													script.parentNode.insertBefore(div, script);
+												})();
+											</script>
+										</div>
+									</div>
+								</div>
+								<!-- end -->						
+							</div>
+							<!--p class="text-warning"><small>N.B. All values cannot be less than 1.</small></p-->
+						</div>
+					</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end ini settings modal dialogue -->	
+
+	<!--/form-->
+
+        <!-- begin save settings modal dialogue -->	
+        <div id="saveSettingsModal" class="modal fade" aria-hidden="true" style="display: none;">
+            <div class="modal-backdrop fade in"></div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Save Settings</h4>
+                    </div>
+                    <div class="modal-body"	draggable="false" data-ub-version="%package_version%" data-ub-component="Text Block" style="transform: translate3d(0px, 0px, 0px);">
+                        <p>Please enter your settings file name:</p>
+						<div class=""><input id="saveSettingsModalFilename" name="" style="" class="form-control" type="text" placeholder="Settings">
+						</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">Close</button>
+						<button id="saveSettingsModalButton" type="button" class="btn">Save Settings</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end save settings modal dialogue -->	
+
+        <!-- begin load settings modal dialogue -->	
+        <div id="loadSettingsModal" class="modal fade" aria-hidden="true" style="display: none;">
+            <div class="modal-backdrop fade in"></div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Load Settings</h4>
+                    </div>
+                    <div class="modal-body"	draggable="false" data-ub-version="%package_version%" data-ub-component="Text Block" style="transform: translate3d(0px, 0px, 0px);">
+                        <p>Please select your settings file:</p>
+						<div class=""><input id="loadSettingsModalFile" name="" style="" class="form-control" type="file" accept=".json">
+						</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">Close</button>
+						<button id="loadSettingsModalButton" type="button" class="btn">Load Settings</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end load settings modal dialogue -->		
+	
+        <!-- begin Scenario Selector modal dialogue -->	
+        <div id="scenariosSelectorModal" class="modal fade" aria-hidden="true" style="display: none;">
+            <div class="modal-backdrop fade in"></div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Scenario Selector</h4>
+                    </div>
+                    <div class="modal-body"	draggable="false" data-ub-version="%package_version%" data-ub-component="Text Block" style="transform: translate3d(0px, 0px, 0px);">
+                        <p>Select the scenarios that will appear on the dashboard charts:</p>
+                        <div id="scenarios_div"></div>
+                        <p class="text-warning"><small>You can change the name and the colour of any scenario as well.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end Scenario Selector modal dialogue -->	
+
+		
+		
+        <!-- begin Messages non-modal dialogue --
+        <div id="messagesNonModal" class="modal fade" aria-hidden="true" style="display: none;" data-backdrop="false">
+            <div class="modal-backdrop fade in"></div>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">All Past Messages (Current Scenario)</h4>
+                    </div>
+                    <div class="modal-body"	draggable="false" data-ub-version="%package_version%" data-ub-component="Text Block" style="transform: translate3d(0px, 0px, 0px);">
+                        <p>Here you will find all messages that you have received since the begining of this scenario:</p>
+						<div id="messagesDiv" class="">					
+						</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -- end Messages non-modal dialogue -->			
+
+		<!-- Begin InsightMaker Files-->
+        <script type="text/javascript">
+
+		var initialTime = null;
+		var finalTime = null;
+		var timeStep = null;
+		
+		var toasts = [
+			new Toast('info', 'toast-top-left', 'Information!'),
+			new Toast('success', 'toast-top-left', 'Success!'),
+			new Toast('warning', 'toast-top-left', 'Warning!'),
+			new Toast('error', 'toast-top-left', 'Error!')
+		];
+
+		toastr.options = {
+		  "closeButton": true,
+		  "debug": false,
+		  "newestOnTop": false,
+		  "progressBar": false,
+		  "positionClass": "toast-top-right",
+		  "preventDuplicates": true,
+		  "onclick": null,
+		  "showDuration": "300",
+		  "hideDuration": "1000",
+		  "timeOut": 0,
+		  "extendedTimeOut": 0,
+		  "showEasing": "swing",
+		  "hideEasing": "linear",
+		  "showMethod": "fadeIn",
+		  "hideMethod": "fadeOut",
+		  "tapToDismiss": false
+	    }
+		
+		function Toast(type, css, msg) {
+			this.type = type;
+			this.css = css;
+			this.msg = msg;
+		}
+		
+		function showToast(i, msg, css) {
+			var t = toasts[i];
+			var msg = (typeof (msg) === "undefined")? t.msg : msg;
+			toastr.options.positionClass = (typeof (css) === "undefined")? t.css : css;
+			toastr[t.type](msg);
+			//document.getElementById("messagesDiv").innerHTML += "<hr>"+msg;
+			//messagesNonModal.setMessage(messagesNonModal.getMessage()+"<hr>"+msg);
+			$('#toast-container').addClass('no-print');
+		}
+		/*function findElementByText(text){
+			var jSpot=$("div:contains("+text+")")
+				.filter(function(){ return $(this).children().length === 0;});
+			return jSpot;
+		}*/
+		function beginGame(){
+			$.blockUI();
+			$("input[id$='Initial']").each(function (i, el) {
+				//It'll be an array of elements
+				//el.dataset.fBind == $(el).attr('data-f-bind')
+				var dataBindVar = $(el).attr('data-f-bind');
+				var polCode="";
+				var str="";
+
+				if ( dataBindVar != undefined ) {
+					setValue( findName( dataBindVar ) , el.value );
+					//L1S2_Full_Implementation_Required_Time
+
+					switch (dataBindVar.substring(5, dataBindVar.length)) {
+						case "Full_Implementation_Required_Time":
+							// // textToFind = $(el).parent().parent().parent().parent().siblings(0).text();
+							//var str = $("div:contains('"+textToFind+"')").attr('data-original-title');
+							// // str = $(findElementByText(textToFind)).attr('data-original-title') + "<br>Policy full implementation required time: " + el.value;
+							polCode=dataBindVar.substring(0, 4);
+							str = $("#"+polCode+"_div").attr('data-original-title') + "<br>Implementation time: " + d3.format(".3s")(el.value) + " years";
+							$("#"+polCode+"_div").attr('data-original-title',str);
+							break;
+						case "Full_Depletion_Required_Time":
+							// // textToFind = $(el).parent().parent().parent().parent().siblings(0).text();
+							//var str = $("div:contains('"+textToFind+"')").attr('data-original-title');
+							// // str = $(findElementByText(textToFind)).attr('data-original-title') + "<br>Policy full depletion required time: " + el.value;
+							polCode=dataBindVar.substring(0, 4);
+							str = $("#"+polCode+"_div").attr('data-original-title') + "<br>Depletion time: " + d3.format(".3s")(el.value) + " years";
+							$("#"+polCode+"_div").attr('data-original-title',str);
+							break;
+						case "Full_Implementation_Cost":
+							// // textToFind = $(el).parent().parent().parent().parent().siblings(0).text();
+							//var str = $("div:contains('"+textToFind+"')").attr('data-original-title');
+							// // str = $(findElementByText(textToFind)).attr('data-original-title') + "<br>Policy total implementation cost: " + el.value;
+							polCode=dataBindVar.substring(0, 4);
+							str = $("#"+polCode+"_div").attr('data-original-title') + "<br>Implementation cost: " + d3.format(".3s")(el.value) + " " + currencyVector[selectedCurrencyID];
+							$("#"+polCode+"_div").attr('data-original-title',str);
+					}
+
+					//$(findElementByText(textToFind)).attr('data-original-title',str);
+					// // $(findElementByText(textToFind)).each(function(i,el){$(el).attr('data-original-title',str);});
+					//L1S2_div
+				}
+			});
+			
+			
+			//ahgawad
+			
+			initialTime = getTimeStart();
+			finalTime = getTimeLength();
+			timeStep = getTimeStep();
+			setTimeLength(1)
+			setTimeStep(1);
+			iniRes = runModel({
+						silent: true,
+						onError: function(){
+							alert("A simulation error occurred. Please reload this page!");
+						}
+					});
+			//http://stackoverflow.com/questions/722668/traverse-all-the-nodes-of-a-json-object-tree-with-javascript
+			function traverse(o) {
+				for (i in o) {
+					if (!!o[i] && typeof(o[i])=="object") {
+						//console.log(i, o[i]);
+						if ( i=="results" && _.isArray(o[i]) ) o[i].pop();
+						traverse(o[i] );
+					}
+				}
+			} 
+			while (true) {
+				// ...
+				if ( iniRes!= null ) {
+					traverse(iniRes);
+					break;
+				}
+			}
+			setTimeLength(finalTime)
+			setTimeStep(timeStep);
+			setPauseInterval(1);
+			resetModel(0);
+			$.unblockUI();
+		}
+		
+		// begin Override Forio's based functions
+		function resetModel(setTime){
+			toastr.clear();
+			$.blockUI();
+			//kill any old simulations
+			if( simulationRunning() ) {
+				endRunningSimulation();
+			}
+			// Do we reload the model, so that all values set to the default?
+			//loadXML(mymodel);
+			
+			//enable simulation buttons if disabled by the end of a previous simulation
+			$('#advanceSimulationButton').prop('disabled', false);
+			$('#budgetButton').prop('disabled', false);
+
+			// empty the simulateController
+			simulateController = null;
+
+			if ( iniRes != null ) {
+				// reset the slider to the default value - default values should be found and stored eariler than running the model, perhaps immediately after loading the model
+				// I think it should added to an array of default variables where the key will be the variable name in the model, or at least array of objects weher the model variable name is an element -- also should be generalised, we don't want list "range_Carrying_Capacity", "span_Carrying_Capacity" and all other variables, it should be automated
+				/*XXXXXX INITILISATIONS XXXXXXXX*/
+				
+				var iniBudget = iniRes.value( findName( 'Available_Budget' ) )[0];
+				$( "#text_Available_Budget_Initial" ).val( iniBudget );
+				//$("#text_Available_Budget_Initial").val( iniRes.value( findName( $("#text_Available_Budget_Initial").attr('data-f-bind') ) )[0] );
+
+				$("#text_Available_Budget_Initial").find("span").text( d3.format('.3s')( ( iniBudget >= 1 ) ? iniBudget : 0 ) );
+				
+				$('#div_available_budget').find("span").text( d3.format('.3s')( ( iniBudget >= 1 ) ? iniBudget : 0 ) );
+				
+			
+				
+				//$('#div_time').find("span").text( ' 0' );
+				$('#div_time').find("span").text( iniRes.times[0] );
+				
+				$('div[data-f-bind$="_Budget"]').each(function (i, el) {
+					$(el).find("span").text( d3.format('.3s')(iniRes.value(findName($(el).attr('data-f-bind')))[0]) );
+				});
+				// all sliders and related span
+
+				//$('input[id^="range_"]').each(function (i, el) {
+				$("input[id$='Goal']").each(function (i, el) {
+					//It'll be an array of elements
+					/* new changes 
+					var modelIniVarVal = iniRes.value(findName($(el).attr('data-f-bind')))[0];
+					el.value = modelIniVarVal;
+					$(el.nextElementSibling).text(modelIniVarVal+'%')
+					*/
+					el.value = 0;
+					$(el.nextElementSibling).text(d3.format('.3s')(0))
+				});
+				/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+				// to be generalised, we don't want list "Population" and all other variables, it should be automated
+				/*XXXXXXXXXXXXXX*/
+				$('div[id^="chart_"]').each(function (i, el) {
+					var chartID = $(el).attr('id')
+					var modelVarName = $(el).attr('data-f-c-source')
+					
+				//runsSourceArray[chartID][runsNamesArray[runsNamesArray.length - 1]["name"]] = _.filter($.makeArray( res.value(findName(modelVarName)) ), function(num, key) { return key % 8 == 0; });
+
+					runsSourceArray[chartID][runsNamesArray[runsNamesArray.length - 1]["name"]] = _.filter($.makeArray( iniRes.value(findName(modelVarName))[0] ), function(num, key) { return key % 8 == 0; });
+
+				//runsCategoriesArray[chartID] = (runsCategoriesArray[chartID].length > res.times.length / 8) ? runsCategoriesArray[chartID] : _.filter($.makeArray(res.times), function(num, key) { return key % 8 == 0; });
+
+					runsCategoriesArray[chartID] = (runsCategoriesArray[chartID].length > 1) ? runsCategoriesArray[chartID] : _.filter($.makeArray( getTimeStart() ), function(num, key) { return key % 8 == 0; });
+					
+					
+					
+				});
+				/*XXXXXXXXXXXXXX*/
+				findTotal();
+				renderContours();
+				updatePowerGauges(iniRes);
+				updatePieContours(iniRes);
+				updateSingleScenarioChart(iniRes);
+				updateSingleScenarioTable(iniRes);
+								
+			}
+
+			setTimeLoops = 0;
+			if( setTime > 0 ) {
+				advanceModel(setTime);
+			}
+
+			$.unblockUI();
+		}
+
+		function advanceModel(steps) {
+			$.blockUI();
+			//$('#budgetButton').prop('disabled', true);
+			//var currentTime = 0;
+			//var pauseIntervalsLeft = 1;
+			
+			// Is there a running simulation?
+			if( simulateController == null ) {
+				// there is no running simulation, then create a new simulation.
+				// all decision variables should be set to the model using setValue()
+
+				
+			//$('input[id^="range_"]').each(function (i, el) {
+			// The available_budget_initial is initialised once per simulation, this is why it does not appear later like the Goal ranges. /*******/
+			setValue( findName( $("#text_Available_Budget_Initial").attr('data-f-bind') ) , $("#text_Available_Budget_Initial").val() );
+
+			$("input[id$='Goal']").each(function (i, el) {
+				//It'll be an array of elements
+				// XXX XXX XXXX setValue changes the model for ever!!	We need to find a solution for this, so that we can reset the interface to the very original model values, and not the affected model by setValue!!!
+				
+				//L1S2_Devoted_Budget_Goal
+				//L1S2_Implementation_Unit_Cost
+				/*var policyCost = getValue( findName( $(el).attr('data-f-bind').replace("Level_Goal", "Unit_Cost") ) );
+				var policyCurrentImplementation = iniRes.lastValue( findName( $(el).attr('data-f-bind').replace("_Goal", "") ) );
+				var goalVal = policyCurrentImplementation + ( el.value / policyCost );
+				goalVal = goalVal > 113.33333 ? 113.33333 : goalVal;
+				//goalVal = goalVal < 0 ? 0 : goalVal;
+				goalVal = el.value == 0 ? 0 : goalVal;
+				setValue( findName( $(el).attr('data-f-bind') ) , goalVal );*/
+				setValue( findName( $(el).attr('data-f-bind') ) , el.value );
+
+				/*
+				setValue(modelVar_L1S2_Implementation_Level, document.getElementById("range_L1S2_Implementation_Level_Initial").value);
+				*/
+			});
+			/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+			
+				runModel({
+					silent: true,
+					onPause: function(res){
+						simulateController = res;
+						//if( steps > 0 ) {
+						if( setTimeLoops < Math.round( steps / getPauseInterval() ) - 1 ) {
+							setTimeLoops++;
+							simulateController.resume();
+						}
+						//}
+						logUpdate(res);
+					},
+					onSuccess: function(res){
+						logUpdate(res);
+						//simulateController = null;
+					},
+					onError: function(){
+						alert("A simulation error occurred. Please reload this page!");
+					}
+				});
+				
+			} else {
+				// there is a running simulation, then resume simulation.
+				// all decision variables should be set to the model using simulateController.setValue()
+
+				/*******/				
+				simulateController.setValue( findName( $("#text_Available_Budget_Initial").attr('data-f-bind') ) , $("#text_Available_Budget_Initial").val() );
+				/*******/
+				
+				//$('input[id^="range_"]').each(function (i, el) {
+				$("input[id$='Goal']").each(function (i, el) {
+					//It'll be an array of elements
+					/*var modelDecisionVarVal = findName($(el).attr('data-f-bind'));
+					var policyCost = getValue( findName( $(el).attr('data-f-bind').replace("Level_Goal", "Unit_Cost") ) );
+					var policyCurrentImplementation = simulateController.lastValue( findName( $(el).attr('data-f-bind').replace("_Goal", "") ) );
+					var goalVal = policyCurrentImplementation + ( el.value / policyCost );
+					goalVal = goalVal > 113.33333 ? 113.33333 : goalVal;
+					//goalVal = goalVal < 0 ? 0 : goalVal;
+					goalVal = el.value == 0 ? 0 : goalVal;
+					simulateController.setValue(modelDecisionVarVal, goalVal);*/
+					simulateController.setValue( findName($(el).attr('data-f-bind')) , el.value );
+				});
+				/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+				var i = 0;
+				do {
+					simulateController.resume();
+				} while ( ++i < Math.round( steps / getPauseInterval() ) );
+			}
+
+			$.unblockUI();
+		}
+		// end Override Forio's based functions
+
+		function isLocal(){
+			return true; // Expose additional debugging and error messages
+		}
+
+		function logUpdate(res){
+			time = res.times.slice(-1)[0];//current model time //document.getElementById("varTime").value;
+			$('#div_time').find("span").text( time );
+			
+			// to be generalised, we don't want list "Population" and all other variables, it should be automated
+			/*XXXXXXXXXXXXXX*/
+			$('#div_available_budget').find("span").text( d3.format('.3s')( ( res.lastValue( findName( 'Available_Budget' ) ) >= 1 ) ? res.lastValue(findName('Available_Budget') ) : 0 ) );
+			
+			findTotal();
+			
+			$('div[data-f-bind$="_Budget"]').each(function (i, el) {
+				var modelVarVal = res.lastValue(findName($(el).attr('data-f-bind')));
+				$(el).find("span").text( d3.format('.3s')(modelVarVal) );
+			});
+			
+			
+			$('div[id^="chart_"]').each(function (i, el) {
+				var chartID = $(el).attr('id')
+				var modelVarName = $(el).attr('data-f-c-source')
+
+				runsSourceArray[chartID][runsNamesArray[runsNamesArray.length - 1]["name"]] = _.filter($.makeArray( res.value(findName(modelVarName)) ), function(num, key) { return key % 8 == 0; });
+
+				runsCategoriesArray[chartID] = (runsCategoriesArray[chartID].length > res.times.length / 8) ? runsCategoriesArray[chartID] : _.filter($.makeArray(res.times), function(num, key) { return key % 8 == 0; });
+			
+				/*LEADERSHIP_Indicator
+				PREPAREDNESS_Indicator
+				INFRASTRUCTURE_Indicator
+				COOPERATION_Indicator
+			
+				runsSourceArray["chart_XXX"][runsNamesArray[runsNamesArray.length - 1]["name"]] = $.makeArray( getValue(findName("XXX")) );
+				runsCategoriesArray["chart_XXX"] = $.makeArray( (runsCategoriesArray["chart_XXX"].length > 1) ? runsCategoriesArray["XXX"] : getTimeStart() );
+					*/
+			});
+			/*XXXXXXXXXXXXXX*/
+			
+			/*XXXXXXXXXXXXXX*/
+			/*runsSourceArray["chart_XXX"][runsNamesArray[runsNamesArray.length - 1]["name"]] = $.makeArray(res.value(findName("XXX")) );
+
+			runsCategoriesArray["chart_XXX"] = $.makeArray( (runsCategoriesArray["chart_XXX"].length > res.times.length) ? runsCategoriesArray["chart_XXX"] : res.times );*/
+
+			/*XXXXXXXXXXXXXX*/
+			
+			
+			
+			//runsCategoriesArray["Population"] = res.times;
+
+//            Flow.dom.converters.register('toggle', function (Value) {
+//                return (Value[Value.length - 1] >= finalTime) ? false : true;
+//            });
+
+
+
+			
+			console.log( "Triggered by logUpdate(): Time now is: "+time+"/"+finalTime );
+			if (sentResults[sentResults.length-1]!=time) {
+				sendRecentResults();
+				sentResults.push(time);
+			}
+			
+			renderContours();
+			updatePowerGauges(res);
+			updatePieContours(res);
+			updateSingleScenarioChart(res);
+			updateSingleScenarioTable(res);
+			
+			//Errors=['L1M2_L1S2_E','L1A1_L1M2_E','L1R1_L1A1_E','L3A1_L4A2_E','L4A2_L2A2_E','P1M1_P1S1_E','P2R2_C2R1_E','P1T1_P1M1_E','I1S3_P1S1_E','I1M3_I1S3_E','I2A1_L4A2_E','C1T2_C1A4_E','L1A1_L4A2_E','L2T2_L2A2_E','I1M3_P1M1_E','C1A4_C1M1_E'];
+			Errors=['L1M1_L1S2_E','L1R1_L1M1_E','L1M3_L1S2_E','L1M4_L1S2_E','L2T1_L2A1_E','L3A1_L3M1_E','L3T2_L3A1_E','L4R1_L4M1_E','P1M1_P1S1_E','P1M1_P1S2_E','P1A1_P1M1_E','P1R1_P1A1_E','P2M1_P2S1_E','P2A3_P2M1_E','P2R2_P2A3_E','P2T1_P2R2_E','I1M1_I1S1_E','I1M1_I1S3_E','I1M3_I1S3_E','I1M5_I1S3_E','I2M1_I2S2_E','I2M2_I2S2_E','I1T1_I1M3_E','I2A1_I2M1_E','I2A4_I2M1_E','I2R1_I2A1_E','I2T2_I2A1_E','C1A1_C1M1_E','C1A4_C1S2_E','C2A2_C2M1_E','C1R3_C1A4_E','C2R1_C2A2_E','C1T2_C1R3_E','C2T1_C2R1_E','P2S1_C1S2_E','I1S1_P1S1_E','I1S1_P1S2_E','I1S1_I2S2_E','I1S3_P1S2_E','I1S3_P1S1_E','I1S3_I2S2_E','L3M1_L4M1_E','P1M1_L4M1_E','P2M1_C1M1_E','P2M1_C2M1_E','I1M1_P1M1_E','I1M1_I2M1_E','I1M1_I2M2_E','I1M3_P1M1_E','I1M3_I2M1_E','I1M3_I2M2_E','I1M5_P1M1_E','I1M5_I2M1_E','I1M5_I2M2_E','I2M1_L4M1_E','I2M2_L4M1_E','C1M1_L4M1_E','C2M1_L4M1_E','P2A3_C1A1_E','P2A3_C1A4_E','P2A3_C2A2_E','P1R1_L4R1_E','P2R2_C1R3_E','P2R2_C2R1_E','I2R1_L4R1_E','C1R3_L4R1_E','C2R1_L4R1_E','P2T1_C1T2_E','P2T1_C2T1_E','I1T1_I2T2_E'];
+			
+			//Errors=['L1M1_L1S2_E','L1R1_L1M1_E','L1M3_L1S2_E','L1M4_L1S2_E','L2T1_L2A1_E','L3A1_L3M1_E','L3T2_L3A1_E','L4R1_L4M1_E','P1M1_P1S1_E','P1M1_P1S2_E','P1A1_P1M1_E','P1R1_P1A1_E','P2M1_P2S1_E','P2A3_P2M1_E','P2R2_P2A3_E','P2T1_P2R2_E','I1M1_I1S1_E','I1M1_I1S3_E','I1M3_I1S3_E','I1M5_I1S3_E','I2M1_I2S2_E','I2M2_I2S2_E','I1T1_I1M3_E','I2A1_I2M1_E','I2A4_I2M1_E','I2R1_I2A1_E','I2T2_I2A1_E','C1A1_C1M1_E','C1A4_C1S2_E','C2A2_C2M1_E','C1R3_C1A4_E','C2R1_C2A2_E','C1T2_C1R3_E','C2T1_C2R1_E','P2S1_C1S2_E','I1S1_P1S1_E','I1S1_P1S2_E','I1S1_I2S2_E','I1S3_P1S2_E','I1S3_P1S1_E','I1S3_I2S2_E','L1M1_L4M1_E','L1M3_L4M1_E','L1M4_L4M1_E','L3M1_L4M1_E','P1M1_L4M1_E','P2M1_C1M1_E','P2M1_C2M1_E','I1M1_P1M1_E','I1M1_I2M1_E','I1M1_I2M2_E','I1M3_P1M1_E','I1M3_I2M1_E','I1M3_I2M2_E','I1M5_P1M1_E','I1M5_I2M1_E','I1M5_I2M2_E','I2M1_L4M1_E','I2M2_L4M1_E','C1M1_L4M1_E','C2M1_L4M1_E','P2A3_C1A1_E','P2A3_C1A4_E','P2A3_C2A2_E','L1R1_L4R1_E','P1R1_L4R1_E','P2R2_C1R3_E','P2R2_C2R1_E','I2R1_L4R1_E','C1R3_L4R1_E','C2R1_L4R1_E','P2T1_C1T2_E','P2T1_C2T1_E','I1T1_I2T2_E'];//,'I2R2_L4R1_E' 
+			
+			if( (time % 4) == 0 ) {
+				for (i in Errors) {
+					//YYYY_XXXX_E
+					YYYY_XXXX_Error=Errors[i]
+					YYYY=YYYY_XXXX_Error.substr(0, 4);
+					XXXX=YYYY_XXXX_Error.substr(5, 4);
+
+					//IfThenElse([YYYY_Implementation_Level]>0 AND NOT ([XXXX_Implementation_Level]>[XXXX_Implementation_Level_Threshold]),1,0)
+					if( res.lastValue(findName(YYYY_XXXX_Error)) > 0 ) showToast(3,'\“<a onMouseOver="highlightON(this)" onMouseOut="highlightOFF(this)">'+objectFindByKey(allPolicies,"policyCode",XXXX)["policyText"]+'</a>\” policy should be implemented before implementing \“<a onMouseOver="highlightON(this)" onMouseOut="highlightOFF(this)">'+objectFindByKey(allPolicies,"policyCode",YYYY)["policyText"]+'</a>\” policy.');
+				}
+			}
+			
+			// simulation time left
+			simTimeLeft = ( finalTime - time );
+
+			if( !simulationRunning() || simTimeLeft <= 0 ) {
+				$('#advanceSimulationButton').prop('disabled', true);
+				$('#budgetButton').prop('disabled', true);				
+				showToast(0, "End of simulation!", "toast-top-center");
+			}
+		}
+
+		// simulateController is a globale variable that carries the current running model
+		loadXML(mymodel);
+		var simulateController = null;
+		var iniRes = null;
+		var setTimeLoops = 0;
+		//var timeStep = getTimeStep();
+
+/////////////////// start GUI
+
+
+		$("input[id$='Initial']").each(function (i, el) {
+			//It'll be an array of elements
+			var dataBindVar = $(el).attr('data-f-bind');
+			if ( dataBindVar != undefined ) {
+				var modelIniVarVal = getValue( findName( dataBindVar ) );
+				el.value = modelIniVarVal;
+				if ( $(el.nextElementSibling) != undefined ) {
+					if (dataBindVar.search('_Level_Initial')!=-1) {
+						$(el.nextElementSibling).text( ( ( modelIniVarVal >= 1 ) ? d3.format('.3s')( modelIniVarVal ) : 0 )+"%" );
+					} else {
+						$(el.nextElementSibling).text( ( modelIniVarVal >= 1 ) ? d3.format('.3s')( modelIniVarVal ) : 0 );
+						//$(el).find("span").text( ( modelIniVarVal >= 1 ) ? ' ' + d3.format('.3s')(modelIniVarVal) : ' 0' );
+					}
+				}
+			}
+		});
+		
+
+		/////$("input[id$='Goal']").each(function (i, el) {
+			//It'll be an array of elements
+			/* new changes
+			var modelIniVarVal = getValue(findName($(el).attr('data-f-bind')))[0];
+			el.value = modelIniVarVal;
+			$(el.nextElementSibling).text(modelIniVarVal+'%')
+			*/
+		/////});
+
+		//setTimeStep(1e-12);
+		//setPauseInterval(1e-12);
+		/*
+		setTimeStep(1e-3);
+		setPauseInterval(1e-3);
+
+		runModel({
+			silent: true,
+			onPause: function(res){
+				iniRes = res;
+				//logUpdate(res);
+			},
+			onSuccess: function(res){
+				//logUpdate(res);
+				//iniRes = null;
+			}
+		});
+		
+		if( simulationRunning() ) {
+			endRunningSimulation();
+		}
+		setTimeStep(timeStep);
+		setPauseInterval(10);
+		*/
+		//var modelVarPopulationPrimitive = findName("Population");
+		/*XXXXXXXXXXXXXX*/
+		/*
+		var modelVar_L1S2_Implementation_Level = findName("L1S2_Implementation_Level");
+		var modelVarPopulationtoCarryingCapacityPrimitive = findName("L1S2_Implementation_Level");
+
+		var modelVarIniVal_L1S2_Implementation_Level = getValue(modelVar_L1S2_Implementation_Level);
+		*/
+		/*XXXXXXXXXXXXXX*/
+		// can we create res at initial time?
+		
+		/*
+		// set the slider to the default value
+		document.getElementById("range_Carrying_Capacity").value = modelVarCarryingCapacityPrimitiveDefaultValue;
+		document.getElementById("span_Carrying_Capacity").innerHTML = modelVarCarryingCapacityPrimitiveDefaultValue;
+
+		runsSourceArray["Population"][runsNamesArray[runsNamesArray.length - 1]["name"]] = $.makeArray(getValue(modelVarPopulationPrimitive) );
+		runsCategoriesArray["Population"] = $.makeArray( (runsCategoriesArray["Population"].length > 1) ? runsCategoriesArray["Population"] : getTimeStart() );
+		renderContours();*/
+		// model specific
+		
+//		setPauseInterval(10);
+//		resetModel(0);
+
+/////////////////// end of GUi 
+
+
+		'use strict';
+		$( document ).ready(function() {
+			for (var i = 0; i < currencyVector.length; i++) {
+				var newdiv = document.createElement("div");
+				newdiv.setAttribute("class","radio");
+				newdiv.innerHTML = '<Label for="currencySelector_'+currencyVector[i]+'_Initial"><input onchange="updateCurrency(this.value)" type="radio" id="currencySelector_'+currencyVector[i]+'_Initial" name="currencySelector_Initial" value='+i+((defaultCurrencyID==i)?' checked="checked">':'>')+currencyVector[i]+'</label>';
+				document.getElementById('currencySelector_div').appendChild(newdiv);
+			}
+			updateCurrency(defaultCurrencyID);
+			//document.body.innerHTML = document.body.innerHTML.replace('currencyicon glyphicon-eur', 'glyphicon-usd');
+            /*var cards = $(".iniLeadership");
+            var cards2 = $(".trgLeadership");
+            var cards3 = $(".rslLeadership");
+            for(var i = 0; i < cards.length; i++){
+                var target = Math.floor(Math.random() * cards.length -1) + 1;
+                var target2 = Math.floor(Math.random() * cards.length -1) +1;
+                cards.eq(target).before(cards.eq(target2));
+                cards2.eq(target).before(cards2.eq(target2));
+                cards3.eq(target).before(cards3.eq(target2));
+            }
+            var cards = $(".iniPreparedness");
+            var cards2 = $(".trgPreparedness");
+            var cards3 = $(".rslPreparedness");
+            for(var i = 0; i < cards.length; i++){
+                var target = Math.floor(Math.random() * cards.length -1) + 1;
+                var target2 = Math.floor(Math.random() * cards.length -1) +1;
+                cards.eq(target).before(cards.eq(target2));
+                cards2.eq(target).before(cards2.eq(target2));
+                cards3.eq(target).before(cards3.eq(target2));
+            }
+            var cards = $(".iniInfrastructure");
+            var cards2 = $(".trgInfrastructure");
+            var cards3 = $(".rslInfrastructure");
+            for(var i = 0; i < cards.length; i++){
+                var target = Math.floor(Math.random() * cards.length -1) + 1;
+                var target2 = Math.floor(Math.random() * cards.length -1) +1;
+                cards.eq(target).before(cards.eq(target2));
+                cards2.eq(target).before(cards2.eq(target2));
+                cards3.eq(target).before(cards3.eq(target2));
+            }
+            var cards = $(".iniCooperation");
+            var cards2 = $(".trgCooperation");
+            var cards3 = $(".rslCooperation");
+            for(var i = 0; i < cards.length; i++){
+                var target = Math.floor(Math.random() * cards.length -1) + 1;
+                var target2 = Math.floor(Math.random() * cards.length -1) +1;
+                cards.eq(target).before(cards.eq(target2));
+                cards2.eq(target).before(cards2.eq(target2));
+                cards3.eq(target).before(cards3.eq(target2));
+            }*/
+			
+			$('#scenarioDetailsButton').on('click', function(){$('#scenarioDetailsContainerHeader').text("\""+runsNamesArray[runsNamesArray.length-1].comment+"\" Scenario Details:");});
+			
+			$('[data-toggle="tooltip"]').tooltip({
+				placement : 'auto top',
+				delay: {show: 500, hide: 100},
+				container: 'body'
+			});
+			$("#toggleSimButton").toggle();
+			
+			$('[data-toggle="btns"] .btn').on('click', function(){
+				var $this = $(this);
+				$this.parent().find('.active').removeClass('active');
+				$this.addClass('active');
+			});
+			
+			/* new changes
+			$("input[id$='Goal']").on('change', function(){
+				var $this = $(this)[0];
+				//var $correspondent = $("input[id$="+$this.id.replace('Goal', 'Initial')+"]")[0];
+				//var correspondentValue = $correspondent.value;
+				//var varName = $($this).attr('data-f-bind');
+				var varName = $($this).attr('data-f-bind').replace('_Goal', '');
+				var correspondentValue = ( simulateController != null )? simulateController.lastValue(findName(varName)) : iniRes.value(findName(varName))[0];
+				if( $this.value - correspondentValue < 0 ){
+					$this.value = correspondentValue;
+					$($this.nextElementSibling).text($this.value+'%');
+				}
+			});*/
+
+			$('#iniBudgetButton').click(function () {
+				var budgetModal = $( '#budgetModal' ).modal();
+				$( budgetModal ).find('.modal-title').text('City Default Annual Budget');
+				$( budgetModal ).find('.modal-body p span #modalMessage').text("Indicate your default annual budget");
+				budgetModal.modal('show');
+			});
+
+			$('#budgetButton').click(function () {
+				var budgetModal = $( '#budgetModal' ).modal();
+				$( budgetModal ).find('.modal-title').text('City Annual Budget');
+				$( budgetModal ).find('.modal-body p span #modalMessage').text("Indicate your budget for the next year");
+				budgetModal.modal('show');
+			});
+			
+			
+			$('#budgetModal').on('hidden.bs.modal', function () {
+				//$('#div_available_budget').find("span").text( ' ' + d3.format('.3s')(iniRes.value(findName($('#div_available_budget').attr('data-f-bind')))[0]) );
+				if( simulateController == null ) {
+					var availableBudgetVar = $('#text_Available_Budget_Initial').val();
+					$('#div_available_budget').find("span").text( d3.format('.3s')( ( availableBudgetVar >= 0 ) ?  availableBudgetVar : 0 ) );
+					findTotal();
+
+				}
+			})
+
+			$('#iniSettingsButton').click(function () {
+				var iniSettingsModal = $( '#iniSettingsModal' ).modal();
+				iniSettingsModal.modal('show');
+			});
+			
+			$('#loadIniSettingsButton').click(function () {
+				toastr.clear();
+				var loadIniSettingsModal = $( '#loadSettingsModal' ).modal();
+				loadIniSettingsModal.modal('show');
+			});
+			
+		
+			$('#loadSettingsModalButton').click(function () {
+				var finput = document.getElementById("loadSettingsModalFile");
+				//var editor = document.getElementById("editor");
+				var editor = "";
+
+				var f = finput.files[0];
+
+				if (f) {
+					var r = new FileReader();
+					r.onload = function( e ) { 
+						//editor.innerHTML = e.target.result
+						editor = e.target.result;
+						while (true) {
+							if ( editor!= null ) {
+								try {
+									editor = $.parseJSON(editor);
+								}
+								catch(err) {
+									showToast(3, "Failed to load file!<br>"+err.message, "toast-top-center");
+								}
+								// reset form values from json object
+								var err = 0;
+								$.each(editor, function(i, item){
+									var $el = $('[name="'+item.name+'"]'),
+										type = $el.attr('type');
+									if ($el[0] == undefined || item.name == undefined || item.value == undefined ) {
+										err++;
+									} else {
+										switch(type){
+											case 'checkbox':
+												$el.removeAttr("checked");
+												$el.attr('checked', 'checked');
+												break;
+											case 'radio':
+												$el.removeAttr("checked");
+												//$el.filter('[value="'+item.value+'"]').attr('checked', 'checked');
+												$el.filter('[value="'+item.value+'"]').click();
+												break;
+											default:
+												$el.val(item.value).change();
+										}
+									}
+								});
+								break;
+							}
+						}
+						if( err > 0 ) {
+							showToast(3, "The file contains "+err+" error(s)!", "toast-top-center");
+						}else{
+							showToast(1, "File successfully loaded!", "toast-top-center");
+						}
+
+					}
+					
+					r.readAsText(f);
+					
+				} else { 
+					//editor.innerHTML = "Failed to load file"
+					showToast(3, "Failed to load file!", "toast-top-center");
+				}
+				$('#loadSettingsModal').modal('toggle');
+			});
+			
+			
+			$('#saveIniSettingsButton').click(function () {
+				var saveIniSettingsModal = $( '#saveSettingsModal' ).modal();
+				saveIniSettingsModal.modal('show');
+			});
+			
+			
+			$('#saveSettingsModalButton').click(function () {
+				var a = document.body.appendChild(
+					document.createElement("a")
+				);
+				var fileName = document.getElementById("saveSettingsModalFilename").value;
+				if (fileName == "") fileName = "Settings";
+				a.download = fileName+".json"; //"settings.txt";
+				//a.href = "data:text/html," + document.getElementById("content").innerHTML;
+				var myData = "";
+				//iniForm
+				//myData=$("input[id$='_Initial']").serialize();
+				myData = JSON.stringify($("input[id$='_Initial']").serializeArray())
+
+				//$("input[id$='_Initial']")
+				a.href = "data:text/html," + myData;
+				a.click();
+				$('#saveSettingsModal').modal('toggle');
+			});
+			
+			
+			
+			/*$('#messagesNonModal').modal({
+				backdrop: 'static'
+			});*/
+			
+			/*$("#messagesNonModal").on('shown.bs.modal',function(){
+				$(document).off('focusin.bs.modal');
+			});*/
+
+			
+			/*messagesNonModal = new BootstrapDialog({
+				modal: false,
+				title: 'All Past Messages (Current Scenario)',
+				message: 'Here you will find all messages that you have received since the begining of this scenario:',//+Message2,
+				draggable: true,
+				animate: true,
+				type: BootstrapDialog.TYPE_DEFAULT 
+			});*/
+			
+			$('#messagesButton').click(function () {
+				$("#messagesNonModal").draggable({ handle: ".modal-header" });
+				$('#messagesNonModal').modal('show');
+				//messagesNonModal.open();
+			});
+			
+			// http://jsfiddle.net/techrevolt/Fp4sJ/
+			$(".allownumericwithoutdecimal").on("keypress keyup blur",function (event) {    
+				//$(this).val($(this).val().replace(/[^\d].+/, ""));
+				//console.log(event.which);
+				//(event.which == 8 || event.which == 46 || event.which == 37 || event.which == 39)
+				//if ((event.which < 48 || event.which > 57)) {
+				
+				if ( event.which > 31 && (event.which < 48 || event.which > 57)) {
+					event.preventDefault();
+				}
+				/*while ( event.target.value.length > 1 && event.target.value[0] == 0 ) {
+					event.target.value = event.target.value.substring(1);
+				}*/
+
+				/*if ( ( event.target.value == "" ) || isNaN(event.target.value) ) event.target.value = 0;*/
+			});
+
+			$(".allownumericwithdecimal").on("keypress keyup blur",function (event) {    
+				//$(this).val($(this).val().replace(/[^\d].+/, ""));
+				//console.log(event.which);
+				//(event.which == 8 || event.which == 46 || event.which == 37 || event.which == 39)
+				//if ((event.which < 48 || event.which > 57)) {
+				
+				if ( (event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which > 31 && (event.which < 48 || event.which > 57))) {
+					event.preventDefault();
+				}
+				/*while ( event.target.value.length > 1 && event.target.value[0] == 0 ) {
+					event.target.value = event.target.value.substring(1);
+				}*/
+
+				/*if ( ( event.target.value == "" ) || isNaN(event.target.value) ) event.target.value = 0;*/
+			});
+
+			$('#initialisationModalButton').click(function () {
+				$('#initialisationModal').modal('show');
+			});
+			
+			//$('#initialisationModal').modal('show');
+
+			
+			function setModalMaxHeight(element) {
+			  this.$element     = $(element);  
+			  this.$content     = this.$element.find('.modal-content');
+			  var borderWidth   = this.$content.outerHeight() - this.$content.innerHeight();
+			  var dialogMargin  = $(window).width() < 768 ? 20 : 60;
+			  var contentHeight = $(window).height() - (dialogMargin + borderWidth);
+			  var headerHeight  = this.$element.find('.modal-header').outerHeight() || 0;
+			  var footerHeight  = this.$element.find('.modal-footer').outerHeight() || 0;
+			  var maxHeight     = contentHeight - (headerHeight + footerHeight);
+
+			  this.$content.css({
+				  'overflow': 'hidden'
+			  });
+			  
+			  this.$element
+				.find('.modal-body').css({
+				  'max-height': maxHeight,
+				  'overflow-y': 'auto'
+			  });
+			}
+
+			$('.modal').on('show.bs.modal', function() {
+			  $(this).show();
+			  setModalMaxHeight(this);
+			});
+
+			$(window).resize(function() {
+			  if ($('.modal.in').length != 0) {
+				setModalMaxHeight($('.modal.in'));
+			  }
+			});
+			
+			/*
+			$('#myTab a').click(function (e) {
+				e.preventDefault()
+				$(this).tab('show')
+			});
+			$('#toggleSimResultsButton').on('click', function(event) {        
+				//$('#tabs-0').toggle('in');
+				$('#tabs-0').toggle();
+				//$('#tabs-1').toggle('in');
+				$('#tabs-1').toggle();
+			});
+*/
+
+		});
+
+        </script>
+		<!-- End InsightMaker Files-->
+		
+    </body>
+
+</html>

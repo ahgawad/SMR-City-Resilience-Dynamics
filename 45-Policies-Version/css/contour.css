@@ -1,0 +1,1107 @@
+.chart-container {
+  position: relative;
+}
+.contour-chart {
+  position: relative;
+}
+.contour-chart .plot-area-background {
+  fill: none;
+  stroke: none;
+}
+.contour-chart .axis {
+  stroke: #666666;
+  stroke-width: 1px;
+  fill: none;
+  shape-rendering: crispEdges;
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 13px;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+
+  -moz-user-select: none;
+  /* Firefox all */
+
+  -ms-user-select: none;
+  /* IE 10+ */
+
+  user-select: none;
+}
+.contour-chart .axis text {
+  stroke: none;
+  fill: #666666;
+}
+.contour-chart .axis.x .tick,
+.contour-chart .axis.y .tick {
+  stroke: #666666;
+}
+.contour-chart .axis-title {
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 14px;
+  line-height: 100%;
+  stroke: none;
+  fill: #666666;
+}
+.contour-chart .grid-line {
+  stroke: #cfcfcf;
+}
+.contour-chart .trend-line {
+  stroke-width: 1px;
+  stroke: #05f;
+}
+.contour-chart .legend-wrapper {
+  position: relative;
+  pointer-events: none;
+}
+.contour-chart .legend-wrapper body {
+  position: relative;
+}
+.contour-legend {
+  position: absolute;
+  border: solid 1px #bbb;
+  margin: 5px;
+  padding: 0 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 13px;
+}
+.contour-legend .contour-legend-key {
+  display: inline-block;
+  width: .9em;
+  height: .9em;
+  border-radius: 1px;
+  margin-right: 5px;
+  margin-bottom: -0.1em;
+}
+.contour-legend .contour-legend-entry {
+  display: inline-block;
+  line-height: 1.5em;
+  margin: 0 .4em;
+}
+.contour-legend.vertical .contour-legend-entry {
+  display: block;
+  margin: .2em .2em;
+}
+.cool {
+  stroke: #000;
+  stroke-width: 0;
+  fill: #4c94ff;
+}
+.nw-tooltip {
+  position: absolute;
+  text-align: left;
+  min-width: 1.5em;
+  min-height: 1em;
+  padding: 4px 8px;
+  font: 10px sans-serif;
+  line-height: 16px;
+  background: #555555;
+  border: solid 1px transparent;
+  border-radius: 8px;
+  pointer-events: none;
+  transition: all 0.05s ease-out;
+}
+.nw-tooltip .text {
+  opacity: 1;
+  color: #ffffff;
+}
+.stack-tooltip {
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 13px;
+}
+.stack-tooltip span {
+  white-space: nowrap;
+}
+
+/*
+.s-1 {
+  color: #2477b3;
+  stroke: #2477b3;
+  fill: #2477b3;
+}
+.s-1.line,
+.s-1 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-1.contour-legend-key {
+  background-color: #2477b3;
+}
+.s-1.dot,
+.s-1 .dot {
+  stroke-dasharray: none;
+}
+.s-2 {
+  color: #008c48;
+  stroke: #008c48;
+  fill: #008c48;
+}
+.s-2.line,
+.s-2 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-2.contour-legend-key {
+  background-color: #008c48;
+}
+.s-2.dot,
+.s-2 .dot {
+  stroke-dasharray: none;
+}
+.s-3 {
+  color: #ee2e2f;
+  stroke: #ee2e2f;
+  fill: #ee2e2f;
+}
+.s-3.line,
+.s-3 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-3.contour-legend-key {
+  background-color: #ee2e2f;
+}
+.s-3.dot,
+.s-3 .dot {
+  stroke-dasharray: none;
+}
+.s-4 {
+  color: #f47d23;
+  stroke: #f47d23;
+  fill: #f47d23;
+}
+.s-4.line,
+.s-4 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-4.contour-legend-key {
+  background-color: #f47d23;
+}
+.s-4.dot,
+.s-4 .dot {
+  stroke-dasharray: none;
+}
+.s-5 {
+  color: #662c91;
+  stroke: #662c91;
+  fill: #662c91;
+}
+.s-5.line,
+.s-5 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-5.contour-legend-key {
+  background-color: #662c91;
+}
+.s-5.dot,
+.s-5 .dot {
+  stroke-dasharray: none;
+}
+.s-6 {
+  color: #a21d21;
+  stroke: #a21d21;
+  fill: #a21d21;
+}
+.s-6.line,
+.s-6 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-6.contour-legend-key {
+  background-color: #a21d21;
+}
+.s-6.dot,
+.s-6 .dot {
+  stroke-dasharray: none;
+}
+.s-7 {
+  color: #b43894;
+  stroke: #b43894;
+  fill: #b43894;
+}
+.s-7.line,
+.s-7 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-7.contour-legend-key {
+  background-color: #b43894;
+}
+.s-7.dot,
+.s-7 .dot {
+  stroke-dasharray: none;
+}
+.s-8 {
+  color: #010202;
+  stroke: #010202;
+  fill: #010202;
+}
+.s-8.line,
+.s-8 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-8.contour-legend-key {
+  background-color: #010202;
+}
+.s-8.dot,
+.s-8 .dot {
+  stroke-dasharray: none;
+}
+*/
+
+.s-1 {
+  color: #ffdb63;
+  stroke: #ffdb63;
+  fill: #ffdb63;
+}
+.s-1.line,
+.s-1 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-1.contour-legend-key {
+  background-color: #ffdb63;
+}
+.s-1.dot,
+.s-1 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-2 {
+  color: #5e00af;
+  stroke: #5e00af;
+  fill: #5e00af;
+}
+.s-2.line,
+.s-2 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-2.contour-legend-key {
+  background-color: #5e00af;
+}
+.s-2.dot,
+.s-2 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-3 {
+  color: #5edd06;
+  stroke: #5edd06;
+  fill: #5edd06;
+}
+.s-3.line,
+.s-3 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-3.contour-legend-key {
+  background-color: #5edd06;
+}
+.s-3.dot,
+.s-3 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-4 {
+  color: #fd4cfc;
+  stroke: #fd4cfc;
+  fill: #fd4cfc;
+}
+.s-4.line,
+.s-4 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-4.contour-legend-key {
+  background-color: #fd4cfc;
+}
+.s-4.dot,
+.s-4 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-5 {
+  color: #00fc84;
+  stroke: #00fc84;
+  fill: #00fc84;
+}
+.s-5.line,
+.s-5 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-5.contour-legend-key {
+  background-color: #00fc84;
+}
+.s-5.dot,
+.s-5 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-6 {
+  color: #9e00a8;
+  stroke: #9e00a8;
+  fill: #9e00a8;
+}
+.s-6.line,
+.s-6 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-6.contour-legend-key {
+  background-color: #9e00a8;
+}
+.s-6.dot,
+.s-6 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-7 {
+  color: #e3ff62;
+  stroke: #e3ff62;
+  fill: #e3ff62;
+}
+.s-7.line,
+.s-7 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-7.contour-legend-key {
+  background-color: #e3ff62;
+}
+.s-7.dot,
+.s-7 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-8 {
+  color: #002ba8;
+  stroke: #002ba8;
+  fill: #002ba8;
+}
+.s-8.line,
+.s-8 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-8.contour-legend-key {
+  background-color: #002ba8;
+}
+.s-8.dot,
+.s-8 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-9 {
+  color: #b4b300;
+  stroke: #b4b300;
+  fill: #b4b300;
+}
+.s-9.line,
+.s-9 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-9.contour-legend-key {
+  background-color: #b4b300;
+}
+.s-9.dot,
+.s-9 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-10 {
+  color: #016aee;
+  stroke: #016aee;
+  fill: #016aee;
+}
+.s-10.line,
+.s-10 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-10.contour-legend-key {
+  background-color: #016aee;
+}
+.s-10.dot,
+.s-10 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-11 {
+  color: #f05400;
+  stroke: #f05400;
+  fill: #f05400;
+}
+.s-11.line,
+.s-11 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-11.contour-legend-key {
+  background-color: #f05400;
+}
+.s-11.dot,
+.s-11 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-12 {
+  color: #01f2ed;
+  stroke: #01f2ed;
+  fill: #01f2ed;
+}
+.s-12.line,
+.s-12 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-12.contour-legend-key {
+  background-color: #01f2ed;
+}
+.s-12.dot,
+.s-12 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-13 {
+  color: #f6004f;
+  stroke: #f6004f;
+  fill: #f6004f;
+}
+.s-13.line,
+.s-13 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-13.contour-legend-key {
+  background-color: #f6004f;
+}
+.s-13.dot,
+.s-13 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-14 {
+  color: #75ffc6;
+  stroke: #75ffc6;
+  fill: #75ffc6;
+}
+.s-14.line,
+.s-14 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-14.contour-legend-key {
+  background-color: #75ffc6;
+}
+.s-14.dot,
+.s-14 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-15 {
+  color: #a3007d;
+  stroke: #a3007d;
+  fill: #a3007d;
+}
+.s-15.line,
+.s-15 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-15.contour-legend-key {
+  background-color: #a3007d;
+}
+.s-15.dot,
+.s-15 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-16 {
+  color: #8effa5;
+  stroke: #8effa5;
+  fill: #8effa5;
+}
+.s-16.line,
+.s-16 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-16.contour-legend-key {
+  background-color: #8effa5;
+}
+.s-16.dot,
+.s-16 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-17 {
+  color: #ff4aa6;
+  stroke: #ff4aa6;
+  fill: #ff4aa6;
+}
+.s-17.line,
+.s-17 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-17.contour-legend-key {
+  background-color: #ff4aa6;
+}
+.s-17.dot,
+.s-17 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-18 {
+  color: #358400;
+  stroke: #358400;
+  fill: #358400;
+}
+.s-18.line,
+.s-18 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-18.contour-legend-key {
+  background-color: #358400;
+}
+.s-18.dot,
+.s-18 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-19 {
+  color: #ff90e9;
+  stroke: #ff90e9;
+  fill: #ff90e9;
+}
+.s-19.line,
+.s-19 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-19.contour-legend-key {
+  background-color: #ff90e9;
+}
+.s-19.dot,
+.s-19 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-20 {
+  color: #6d8400;
+  stroke: #6d8400;
+  fill: #6d8400;
+}
+.s-20.line,
+.s-20 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-20.contour-legend-key {
+  background-color: #6d8400;
+}
+.s-20.dot,
+.s-20 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-21 {
+  color: #0174cc;
+  stroke: #0174cc;
+  fill: #0174cc;
+}
+.s-21.line,
+.s-21 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-21.contour-legend-key {
+  background-color: #0174cc;
+}
+.s-21.dot,
+.s-21 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-22 {
+  color: #ffb55c;
+  stroke: #ffb55c;
+  fill: #ffb55c;
+}
+.s-22.line,
+.s-22 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-22.contour-legend-key {
+  background-color: #ffb55c;
+}
+.s-22.dot,
+.s-22 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-23 {
+  color: #00336d;
+  stroke: #00336d;
+  fill: #00336d;
+}
+.s-23.line,
+.s-23 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-23.contour-legend-key {
+  background-color: #00336d;
+}
+.s-23.dot,
+.s-23 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-24 {
+  color: #ff5f52;
+  stroke: #ff5f52;
+  fill: #ff5f52;
+}
+.s-24.line,
+.s-24 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-24.contour-legend-key {
+  background-color: #ff5f52;
+}
+.s-24.dot,
+.s-24 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-25 {
+  color: #01c59c;
+  stroke: #01c59c;
+  fill: #01c59c;
+}
+.s-25.line,
+.s-25 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-25.contour-legend-key {
+  background-color: #01c59c;
+}
+.s-25.dot,
+.s-25 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-26 {
+  color: #ac005d;
+  stroke: #ac005d;
+  fill: #ac005d;
+}
+.s-26.line,
+.s-26 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-26.contour-legend-key {
+  background-color: #ac005d;
+}
+.s-26.dot,
+.s-26 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-27 {
+  color: #02b5c5;
+  stroke: #02b5c5;
+  fill: #02b5c5;
+}
+.s-27.line,
+.s-27 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-27.contour-legend-key {
+  background-color: #02b5c5;
+}
+.s-27.dot,
+.s-27 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-28 {
+  color: #890800;
+  stroke: #890800;
+  fill: #890800;
+}
+.s-28.line,
+.s-28 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-28.contour-legend-key {
+  background-color: #890800;
+}
+.s-28.dot,
+.s-28 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-29 {
+  color: #8ca4ff;
+  stroke: #8ca4ff;
+  fill: #8ca4ff;
+}
+.s-29.line,
+.s-29 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-29.contour-legend-key {
+  background-color: #8ca4ff;
+}
+.s-29.dot,
+.s-29 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-30 {
+  color: #a76700;
+  stroke: #a76700;
+  fill: #a76700;
+}
+.s-30.line,
+.s-30 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-30.contour-legend-key {
+  background-color: #a76700;
+}
+.s-30.dot,
+.s-30 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-31 {
+  color: #e3aaff;
+  stroke: #e3aaff;
+  fill: #e3aaff;
+}
+.s-31.line,
+.s-31 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-31.contour-legend-key {
+  background-color: #e3aaff;
+}
+.s-31.dot,
+.s-31 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-32 {
+  color: #233900;
+  stroke: #233900;
+  fill: #233900;
+}
+.s-32.line,
+.s-32 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-32.contour-legend-key {
+  background-color: #233900;
+}
+.s-32.dot,
+.s-32 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-33 {
+  color: #afccff;
+  stroke: #afccff;
+  fill: #afccff;
+}
+.s-33.line,
+.s-33 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-33.contour-legend-key {
+  background-color: #afccff;
+}
+.s-33.dot,
+.s-33 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-34 {
+  color: #813300;
+  stroke: #813300;
+  fill: #813300;
+}
+.s-34.line,
+.s-34 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-34.contour-legend-key {
+  background-color: #813300;
+}
+.s-34.dot,
+.s-34 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-35 {
+  color: #dbf3ff;
+  stroke: #dbf3ff;
+  fill: #dbf3ff;
+}
+.s-35.line,
+.s-35 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-35.contour-legend-key {
+  background-color: #dbf3ff;
+}
+.s-35.dot,
+.s-35 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-36 {
+  color: #2a0002;
+  stroke: #2a0002;
+  fill: #2a0002;
+}
+.s-36.line,
+.s-36 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-36.contour-legend-key {
+  background-color: #2a0002;
+}
+.s-36.dot,
+.s-36 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-37 {
+  color: #ffdcb3;
+  stroke: #ffdcb3;
+  fill: #ffdcb3;
+}
+.s-37.line,
+.s-37 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-37.contour-legend-key {
+  background-color: #ffdcb3;
+}
+.s-37.dot,
+.s-37 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-38 {
+  color: #17001d;
+  stroke: #17001d;
+  fill: #17001d;
+}
+.s-38.line,
+.s-38 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-38.contour-legend-key {
+  background-color: #17001d;
+}
+.s-38.dot,
+.s-38 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-39 {
+  color: #ffdbed;
+  stroke: #ffdbed;
+  fill: #ffdbed;
+}
+.s-39.line,
+.s-39 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-39.contour-legend-key {
+  background-color: #ffdbed;
+}
+.s-39.dot,
+.s-39 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-40 {
+  color: #3b1c00;
+  stroke: #3b1c00;
+  fill: #3b1c00;
+}
+.s-40.line,
+.s-40 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-40.contour-legend-key {
+  background-color: #3b1c00;
+}
+.s-40.dot,
+.s-40 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-41 {
+  color: #ffa2a1;
+  stroke: #ffa2a1;
+  fill: #ffa2a1;
+}
+.s-41.line,
+.s-41 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-41.contour-legend-key {
+  background-color: #ffa2a1;
+}
+.s-41.dot,
+.s-41 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-42 {
+  color: #007761;
+  stroke: #007761;
+  fill: #007761;
+}
+.s-42.line,
+.s-42 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-42.contour-legend-key {
+  background-color: #007761;
+}
+.s-42.dot,
+.s-42 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-43 {
+  color: #6c0024;
+  stroke: #6c0024;
+  fill: #6c0024;
+}
+.s-43.line,
+.s-43 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-43.contour-legend-key {
+  background-color: #6c0024;
+}
+.s-43.dot,
+.s-43 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-44 {
+  color: #017297;
+  stroke: #017297;
+  fill: #017297;
+}
+.s-44.line,
+.s-44 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-44.contour-legend-key {
+  background-color: #017297;
+}
+.s-44.dot,
+.s-44 .dot {
+  stroke-dasharray: none;
+}
+
+
+.s-45 {
+  color: #00555c;
+  stroke: #00555c;
+  fill: #00555c;
+}
+.s-45.line,
+.s-45 .line {
+  stroke-width: 2px;
+  fill: none;
+}
+.s-45.contour-legend-key {
+  background-color: #00555c;
+}
+.s-45.dot,
+.s-45 .dot {
+  stroke-dasharray: none;
+}

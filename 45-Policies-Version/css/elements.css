@@ -1,0 +1,252 @@
+.tooltip-inner {
+    /*min-width: 150px;*/
+    max-width: 60%; 
+	text-align: left;
+}
+
+.glyphicon-nok:before {
+  content: "Kr";
+  font-weight: bold;
+  /*font-size: 85%;*/
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.glyphicon-gbp:before {
+  content: "£";
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
+
+}
+
+.glyphicon-eur:before {
+  content: "€";
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
+
+}
+
+.contour-legend{ position:relative !important; }
+
+
+/*general field - no colour*/
+.generalfield {
+    text-align: center;
+	border-style: groove;
+	/*margin: 15px;*/
+}
+
+/*leadership and governance*/
+.leadership {
+    /*background-color: rgb(255,204,255);*/
+	background-color: #FBBF47;
+	text-align: center;
+	border-style: groove;
+}
+
+/*preparedness*/
+.preparedness {
+    /*background-color: rgb(222,234,246);*/
+	background-color: #00AFE6;
+	text-align: center;
+	border-style: groove;
+}
+
+/*infrastructure and resources*/
+.infrastructure {
+    /*background-color: rgb(226,239,217);*/
+	background-color: #9CA6A9;
+	text-align: center;
+	border-style: groove;
+}
+
+/*cooperation*/
+.cooperation {
+    /*background-color: rgb(255,255,204);*/
+	background-color: #B7D14C;
+	text-align: center;
+	border-style: groove;
+}
+
+.highlighter{
+	background-color: #FFFF00;
+	font-weight: bold;
+}
+
+.budgethighlighter{
+	background-color: red;
+	font-weight: bold;
+}
+
+/*.row{
+    overflow: hidden;
+}*/
+
+/*[class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+	line-height: 200%;
+}*/
+
+/*.row{
+    display: table;
+}*/
+
+/*[class*="col-"]{
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+	line-height: 200%;
+}*/
+.row {
+	justify-content: center;
+}
+
+.row > [class*='col-'] {
+	justify-content: center;
+	line-height: 200%;
+}
+
+.showInSmallScreens {
+	display: block;
+}
+
+@media screen and (min-width: 992px) {
+	.showInSmallScreens {
+		display: none;
+	}
+
+	.row {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.row > [class*='col-'] {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.range-value {
+    padding-top: 0px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 200%;
+    color: #333;
+    background-color: #fff;
+}
+
+
+.power-gauge g.arc {
+	fill: steelblue;
+}
+
+.power-gauge g.pointer {
+	fill: #e85116;
+	stroke: #b64011;
+}
+
+.power-gauge g.label text {
+	text-anchor: middle;
+	font-size: 14px;
+	font-weight: bold;
+	fill: #666;
+}
+
+
+
+
+/*leadership and governance*/
+.leadershippie .s-1.arc {
+    /*opacity: 0.5;*/
+    /*fill: rgb(255,204,255);*/
+	fill: #FBBF47;
+    stroke: rgb(154,154,154);
+}
+
+/*preparedness*/
+.preparednesspie .s-1.arc {
+    /*opacity: 0.5;*/
+    /*fill: rgb(222,234,246);*/
+    fill: #00AFE6;
+    stroke: rgb(154,154,154);
+}
+
+/*infrastructure and resources*/
+.infrastructurepie .s-1.arc {
+    /*opacity: 0.5;*/
+    /*fill: rgb(226,239,217);*/
+    fill: #9CA6A9;
+    stroke: rgb(154,154,154);
+}
+
+/*cooperation*/
+.cooperationpie .s-1.arc {
+    /*opacity: 0.5;*/
+    /*fill: rgb(255,255,204);*/
+	fill: #B7D14C;
+    stroke: rgb(154,154,154);
+}
+
+.s-2.arc {
+    opacity: 0.5;
+    fill: #ddd;
+    stroke: #ddd;
+}
+
+.center-text,
+.center-label {
+    fill: #666;
+    text-anchor: middle;
+    font-family: monospace;
+}
+
+.center-text {
+    /*font-size: 40;*/
+}
+
+.y-scrollable {
+  /*height:307px;*/
+  height: 470px;/*340px;*/ /*442px;*/
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width:100%;
+}
+
+@media not print {
+	.xy-scrollable {
+	  /*width: 550px;*/
+	  /*height:307px;*/
+	  height: 470px;/*340px;*/ /*442px;*/
+	  /*white-space: nowrap;*/
+	  overflow-x: auto;
+	  overflow-y: auto;
+	}
+}
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+	
+	tr:nth-child(even) {
+		background-color: #f5f5f5 !important;
+		-webkit-print-color-adjust: exact; 
+	}
+	td:nth-child(even) {
+		background-color: #f5f5f5 !important;
+		-webkit-print-color-adjust: exact; 
+	}
+
+    /*.table-striped {
+            background-color: #dedede !important;
+    }*/
+
+}
